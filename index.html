@@ -204,13 +204,14 @@
                 z-index: 800;
                 position: fixed;
                 top: 60%;
-                left: 25%;
+                left: 0;
                 height: 50vh;
                 padding: 0;
+                margin: 0;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                min-width: 648px;
+                min-width: 100dvw;
                 min-height: 432px;
             }
 
@@ -221,11 +222,10 @@
             }
 
             .ExtendedImg {
-                flex: 1;
-                min-width: 644px;
-                min-height: 428px;
-                width: 644px;
-                height: 428px;
+                flex-grow: 1;
+                min-width: 100dvw;
+                min-height: 90%;
+                width: 100dvh;
                 margin: 0;
                 padding: 0;
                 display: flex;
@@ -245,7 +245,7 @@
                 justify-content: flex-end;
                 align-items: center;
                 align-self: flex-end;
-                margin: 0;
+                margin: 5px 0;
                 padding: 0;
             }
 
@@ -446,10 +446,12 @@
                 flex-direction: row;
                 align-items: center;
                 justify-content: space-evenly;
-                flex-wrap: wrap;
                 gap: 6px;
                 padding: 0;
                 margin: -10px 0 0 0;
+                max-width: 100%;
+                overflow-x: auto;
+                overflow-y: none;
             }
 
             .link {
@@ -1394,7 +1396,6 @@
                 }
             
                 #Extended {
-                    min-width: 729px;
                     min-height: 486px;
                     height: 486px;
                 }
@@ -1409,13 +1410,12 @@
 
                 #Extended {
                     top: 40%;
-                    left: 18%;
                 }
                     
                 .ExtendedImg {
-                    min-width: 607.5px;
+                    min-width: 50dvh;
                     min-height: 405px;
-                    width: 729px;
+                    width: 50dvh;
                     height: 486px;
                 }
 
@@ -1464,13 +1464,11 @@
                 .links {
                     gap: 6px;
                     margin:0;
-                    overflow-x: auto;
-                    overflow-y: none;
                 }
 
                 .link {
-                    min-width: 180px;
-                    max-width: 180px;
+                    min-width: 170px;
+                    max-width: 170px;
                     gap: 6px;
                 }
 
@@ -1578,7 +1576,6 @@
                 }
             
                 #Extended {
-                    min-width: 486px;
                     min-height: 324px;
                     
                     height: 324px;
@@ -1593,9 +1590,9 @@
                 }
                     
                 .ExtendedImg {
-                    min-width: 486px;
+                    min-width: 50dvh;
                     min-height: 324px;
-                    width: 486px;
+                    width: 50dvh;
                     height: 324px;
                 }
                 #navTitle {
