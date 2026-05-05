@@ -2471,81 +2471,77 @@
             })
 
 
-            const extended = document.querySelector('#Extended');
-            const extendedImg = document.querySelector('.ExtendedImg img');
+const extended = document.querySelector('#Extended');
+const extendedImg = document.querySelector('.ExtendedImg img');
+const mainFragment = document.createDocumentFragment();
 
-            // Use a fragment to store everything before adding to the DOM
-            const mainFragment = document.createDocumentFragment();
+// 1. EVENT DELEGATION: One listener for ALL images
+MGGal.addEventListener('click', (e) => {
+    // Find the closest container to the click
+    const container = e.target.closest('.galImgContainer');
+    if (!container) return;
 
-            for (const location in mgImages) {
-                const section = document.createElement("div");
-                section.className = "centerSection";
+    // Retrieve the specific data object we stored on the element
+    const data = container._imgData; 
 
-                const container = document.createElement("div");
-                container.className = "locCont";
+    extended.style.display = 'flex';
+    extendedImg.src = data.url;
 
-                const title = document.createElement("h3");
-                title.textContent = location;
-                section.appendChild(title);
+    // Batch update text content
+    fields.nickname.textContent = data.name || "n/a";
+    fields.album.textContent = data.album || "n/a";
+    fields.dateTime.textContent = `${data.date} ${data.time}` || "n/a";
+    fields.location.textContent = data.location || "n/a";
+    fields.alt.textContent = data.alt || "n/a";
+    // ... add your other fields here following this pattern
 
-                for (const image in mgImages[location]) {
-                    const imageData = mgImages[location][image];
+    // 2. Optimized Border Reset
+    // Instead of querySelectorAll (slow), we use a CSS class to manage state
+    document.querySelector('.selected-img')?.classList.remove('selected-img');
+    container.classList.add('selected-img');
+    if(typeof potm !== 'undefined') potm.classList.remove('selected-img');
+});
 
-                    const imgContainer = document.createElement("div");
-                    imgContainer.className = "galImgContainer";
-                    
-                    // 1. Store only the raw data object or the URL
-                    imgContainer.dataset.url = imageData.url;  
+for (const location in mgImages) {
+    const section = document.createElement("div");
+    section.className = "centerSection";
 
-                    const img = document.createElement("img");
-                    
-                    // 2. LAZY LOADING: This is the magic line
-                    img.loading = "lazy"; 
-                    
-                    img.src = imageData.url;
-                    img.alt = imageData.alt || "";
+    const container = document.createElement("div");
+    container.className = "locCont";
 
-                    imgContainer.addEventListener("click", () => {
-                        extended.style.display = 'flex';
-                        extendedImg.src = imageData.url;
+    const title = document.createElement("h3");
+    title.textContent = location;
+    section.appendChild(title);
 
-                        // Instead of reading dataset, just use the imageData object directly
-                        fields.nickname.textContent = imageData.name || "n/a";
-                        fields.album.textContent = imageData.album || "n/a";
-                        fields.dateTime.textContent = `${imageData.date} ${imageData.time}` || "n/a";
-                        fields.location.textContent = imageData.location || "n/a";
-                        fields.alt.textContent = imageData.alt || "n/a";
-                        
-                        // ... (rest of your field updates) ...
+    for (const image in mgImages[location]) {
+        const imageData = mgImages[location][image];
 
-                        // Reset borders efficiently
-                        document.querySelectorAll('.galImgContainer').forEach(el => el.style.border = '2px solid #333');
-                        potm.style.border = '2px solid #333';
-                        imgContainer.style.border = '2px solid rgb(0, 0, 255)';
-                    });
+        const imgContainer = document.createElement("div");
+        imgContainer.className = "galImgContainer";
+        
+        // 3. SECRETS TO SPEED:
+        // Storing the whole object directly on the DOM node is faster than dataset
+        imgContainer._imgData = imageData; 
 
-                    // Use pointerover (not onpointerover)
-                    imgContainer.addEventListener("pointerover", () => {
-                        if (imgContainer.style.borderColor !== 'rgb(0, 0, 255)') {
-                            imgContainer.style.border = '2px solid rgb(57, 57, 255)';
-                        }
-                    });                    
-                    imgContainer.addEventListener("pointerleave", () => {
-                        if (imgContainer.style.borderColor !== 'rgb(0, 0, 255)') {
-                            imgContainer.style.border = '2px solid #333';
-                        }
-                    });
+        const img = document.createElement("img");
+        img.loading = "lazy"; 
+        img.src = imageData.url;
+        img.alt = imageData.alt || "";
+        // Prevents the ghost-image drag effect on desktops
+        img.draggable = false; 
 
-                    imgContainer.appendChild(img);
-                    container.appendChild(imgContainer);
-                }
+        imgContainer.appendChild(img);
+        container.appendChild(imgContainer);
+    }
+    section.appendChild(container);
+    mainFragment.appendChild(section);
+}
 
-                section.appendChild(container);
-                mainFragment.appendChild(section); // Add to fragment
-            }
+// 4. Use RequestAnimationFrame to let the browser breathe before injecting
+requestAnimationFrame(() => {
+    MGGal.appendChild(mainFragment);
+});
 
-            // 3. Inject everything at once
-            MGGal.appendChild(mainFragment);
 
 
             potm.addEventListener('click', () => {
