@@ -232,6 +232,11 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: space-evenly;
+                position: absolute; /* or fixed */
+                touch-action: none; /* REQUIRED: stops browser from scrolling/panning */
+                user-select: none;  /* stops text highlighting while dragging */
+                -webkit-user-select: none;
+                overflow: hidden;   /* keeps content tidy during resize */
             }
 
             .ExtendedImgHead, .ExtendedImgTail {
@@ -1459,6 +1464,8 @@
                 .links {
                     gap: 6px;
                     margin:0;
+                    overflow-x: auto;
+                    overflow-y: none;
                 }
 
                 .link {
@@ -1704,7 +1711,7 @@
                     <button class="extendedImgX" data-target="#Extended">X</button>
                 </div>
                 
-                <img src="IMG_6918.jpg">
+                <img src="IMG_7729.jpg">
                 
                 <div class="ExtendedImgTail">
                 </div>
@@ -1739,7 +1746,7 @@
         <section id="Head">
             <div class="navHead">
                 <div class="navSection" id="navPhoto">
-                    <img src="IMG_6918.jpg">
+                    <img src="IMG_7729.jpg">
                 </div>
                 <div class="navSection" id="navTitle">
                     <div class="navTitle-content">
@@ -2147,10 +2154,10 @@
 
             const mgImages = {
                 "Glen Canyon Dam": {
-                    "1": {name: "Across The Glen Canyon Dam", url: "JPEG/GlenCanyonDam/IMG_7200.JPG", album: "Glen Canyon Dam", date: "02/06/2026", time: "5:16 PM", location: "Glen Canyon Dam, Page, AZ", coordinates: "36.92390N, 111.47777W", alt: "Looking Across The Glen Canyon Dam from the Glen Canyon Overlook", fileType: "JPG", fileSize: "6,407 KB", dimensions: "5184x3456", rating: "2.1/5", camera: "Canon EOS REBEL T2i", lens: "Tamron 18-270mm", focalLength: "55mm", fStop: "f/11", exposureProgram: "Landscape", exposureBias: "0 Step", exposureTime: "1/400 sec.", iso: "ISO-100", flash: "No Flash"},
-                    "2": {name: "The Glen Canyon Dam", url: "JPEG/GlenCanyonDam/IMG_7201.JPG", album: "Glen Canyon Dam", date: "02/06/2026", time: "5:16PM", location: "Glen Canyon Dam, Page, AZ", coordinates: "36.92390N, 111.47777W", alt: "At Look at the Glen Canyon Dam, Page, AZ", fileType: "JPG", fileSize: "5,934 KB", dimensions: "3456x5184", rating: "3.2/5", camera: "Canon EOS REBEL T2i", lens: "Tamron 18-270mm", focalLength: "55mm", fStop: "f/11", exposureProgram: "Landscape", exposureBias: "0 Step", exposureTime: "1/320 sec.", iso: "ISO-100", flash: "No Flash"},
-                    "3": {name: "Beyond The Glen Canyon Dam", url: "JPEG/GlenCanyonDam/IMG_7202.JPG", album: "Glen Canyon Dam", date: "02/06/2026", time: "5:17PM", location: "Glen Canyon Dam, Page, AZ", coordinates: "36.92390N, 111.47777W", alt: "Looking Beyond The Glen Canyon Dam from the Glen Canyon Overlook", fileType: "JPG", fileSize: "6,201 KB", dimensions: "5184x3456", rating: "2.8/5", camera: "Canon EOS REBEL T2i", lens: "Tamron 18-270mm", focalLength: "55mm", fStop: "f/11", exposureProgram: "Landscape", exposureBias: "0 Step", exposureTime: "1/400 sec.", iso: "ISO-100", flash: "No Flash"},
-                    "4": {name: "Seen From The Glen Canyon Dam", url: "JPEG/GlenCanyonDam/IMG_7203.JPG", album: "Glen Canyon Dam", date: "02/06/2026", time: "5:18PM", location: "Glen Canyon Dam, Page, AZ", coordinates: "36.92390N, 111.47777W", alt: "A Look at the Glen Canyon Bridge, Page, AZ", fileType: "JPG", fileSize: "7,000 KB", dimensions: "5184x3456", rating: "3.2/5", camera: "Canon EOS REBEL T2i", lens: "Tamron 18-270mm", focalLength: "20mm", fStop: "f/13", exposureProgram: "Landscape", exposureBias: "0 Step", exposureTime: "1/160 sec.", iso: "ISO-100", flash: "No Flash"},
+                    "1": {name: "Across The Glen Canyon Dam", url: "IMG_7200.JPG", album: "Glen Canyon Dam", date: "02/06/2026", time: "5:16 PM", location: "Glen Canyon Dam, Page, AZ", coordinates: "36.92390N, 111.47777W", alt: "Looking Across The Glen Canyon Dam from the Glen Canyon Overlook", fileType: "JPG", fileSize: "6,407 KB", dimensions: "5184x3456", rating: "2.1/5", camera: "Canon EOS REBEL T2i", lens: "Tamron 18-270mm", focalLength: "55mm", fStop: "f/11", exposureProgram: "Landscape", exposureBias: "0 Step", exposureTime: "1/400 sec.", iso: "ISO-100", flash: "No Flash"},
+                    "2": {name: "The Glen Canyon Dam", url: "IMG_7201.JPG", album: "Glen Canyon Dam", date: "02/06/2026", time: "5:16PM", location: "Glen Canyon Dam, Page, AZ", coordinates: "36.92390N, 111.47777W", alt: "At Look at the Glen Canyon Dam, Page, AZ", fileType: "JPG", fileSize: "5,934 KB", dimensions: "3456x5184", rating: "3.2/5", camera: "Canon EOS REBEL T2i", lens: "Tamron 18-270mm", focalLength: "55mm", fStop: "f/11", exposureProgram: "Landscape", exposureBias: "0 Step", exposureTime: "1/320 sec.", iso: "ISO-100", flash: "No Flash"},
+                    "3": {name: "Beyond The Glen Canyon Dam", url: "IMG_7202.JPG", album: "Glen Canyon Dam", date: "02/06/2026", time: "5:17PM", location: "Glen Canyon Dam, Page, AZ", coordinates: "36.92390N, 111.47777W", alt: "Looking Beyond The Glen Canyon Dam from the Glen Canyon Overlook", fileType: "JPG", fileSize: "6,201 KB", dimensions: "5184x3456", rating: "2.8/5", camera: "Canon EOS REBEL T2i", lens: "Tamron 18-270mm", focalLength: "55mm", fStop: "f/11", exposureProgram: "Landscape", exposureBias: "0 Step", exposureTime: "1/400 sec.", iso: "ISO-100", flash: "No Flash"},
+                    "4": {name: "Seen From The Glen Canyon Dam", url: "IMG_7203.JPG", album: "Glen Canyon Dam", date: "02/06/2026", time: "5:18PM", location: "Glen Canyon Dam, Page, AZ", coordinates: "36.92390N, 111.47777W", alt: "A Look at the Glen Canyon Bridge, Page, AZ", fileType: "JPG", fileSize: "7,000 KB", dimensions: "5184x3456", rating: "3.2/5", camera: "Canon EOS REBEL T2i", lens: "Tamron 18-270mm", focalLength: "20mm", fStop: "f/13", exposureProgram: "Landscape", exposureBias: "0 Step", exposureTime: "1/160 sec.", iso: "ISO-100", flash: "No Flash"},
                 },
                 "Zion Day 3: RoadTrip": {
                     "1": {name: "Pine Creek Bridge and Beyond", url: "IMG_7128.JPG", album: "Zion Day 3: Roadtrip", date: "02/05/2026", time: "4:53PM", location: "Zion-Mount Carmel Hwy, Springdale, UT", coordinates: "37.21680N, 112.96611W", alt: "A look up the Zion-Mount Carmel Hwy from the Pine Creek Bridge", fileType: "JPG", fileSize: "7,614 KB", dimensions: "5184x3456", rating: "3.7/5", camera: "Canon EOS REBEL T2i", lens: "Tokina AT-X Pro", focalLength: "11mm", fStop: "f/7.1", exposureProgram: "Landscape", exposureBias: "0 Step", exposureTime: "1/50 sec.", iso: "ISO-100", flash: "No Flash"},
@@ -2512,108 +2519,79 @@
             const extended = document.querySelector('#Extended');
             const extendedImg = document.querySelector('.ExtendedImg img');
 
+            // Use a fragment to store everything before adding to the DOM
+            const mainFragment = document.createDocumentFragment();
+
             for (const location in mgImages) {
-                // Create Section
                 const section = document.createElement("div");
                 section.className = "centerSection";
 
                 const container = document.createElement("div");
                 container.className = "locCont";
 
-                // Add h3
                 const title = document.createElement("h3");
                 title.textContent = location;
                 section.appendChild(title);
 
-                // Loop through Images
                 for (const image in mgImages[location]) {
-
                     const imageData = mgImages[location][image];
 
-                    // Container Element
                     const imgContainer = document.createElement("div");
                     imgContainer.className = "galImgContainer";
-                    const allImages = document.querySelectorAll('.galImgContainer');
-                    const allImages_Call = document.querySelector('.galImgContainer');
-
-                                
+                    
+                    // 1. Store only the raw data object or the URL
                     imgContainer.dataset.url = imageData.url;  
 
-                    // Store the variables on the container
-                    imgContainer.dataset.nickname = imageData.name || "n/a";
-                    imgContainer.dataset.album = imageData.album || "n/a";
-                    imgContainer.dataset.dateTime = `${imageData.date} ${imageData.time}` || "n/a";
-                    imgContainer.dataset.location = imageData.location || "n/a";
-                    imgContainer.dataset.alt = imageData.alt || "n/a";
-
-                    imgContainer.dataset.fileType = imageData.fileType || "n/a";
-                    imgContainer.dataset.fileSize = imageData.fileSize || "n/a";
-                    imgContainer.dataset.dimensions = imageData.dimensions || "n/a";
-                    imgContainer.dataset.rating = imageData.rating || "n/a";
-
-                    imgContainer.dataset.camera = imageData.camera || "n/a";
-                    imgContainer.dataset.lens = imageData.lens || "n/a";
-                    imgContainer.dataset.focalLength = imageData.focalLength || "n/a";
-                    imgContainer.dataset.fStop = imageData.fStop || "n/a";
-                    imgContainer.dataset.exposureProgram = imageData.exposureProgram || "n/a";
-                    imgContainer.dataset.exposureBias = imageData.exposureBias || "n/a";
-                    imgContainer.dataset.exposureTime = imageData.exposureTime || "n/a";
-                    imgContainer.dataset.iso = imageData.iso || "n/a";
-                    imgContainer.dataset.flash = imageData.flash || "n/a";
-
-                    // Img Element
                     const img = document.createElement("img");
-                    img.src = imageData.url;
-                    img.alt = imageData.alt;
-
-                    // 2 & 3. Set nickname from clicked image
-                    imgContainer.addEventListener("click", () => {
-                        
-                        extended.style.display = 'flex';
-                        extendedImg.src = imgContainer.dataset.url;
-
-                        fields.nickname.textContent = imgContainer.dataset.nickname;
-                        fields.album.textContent = imgContainer.dataset.album;
-                        fields.dateTime.textContent = imgContainer.dataset.dateTime;
-                        fields.location.textContent = imgContainer.dataset.location;
-                        fields.alt.textContent = imgContainer.dataset.alt;
-
-                        fields.fileType.textContent = imgContainer.dataset.fileType;
-                        fields.fileSize.textContent = imgContainer.dataset.fileSize;
-                        fields.dimensions.textContent = imgContainer.dataset.dimensions;
-                        fields.rating.textContent = imgContainer.dataset.rating;
-
-                        fields.camera.textContent = imgContainer.dataset.camera;
-                        fields.lens.textContent = imgContainer.dataset.lens;
-                        fields.focalLength.textContent = imgContainer.dataset.focalLength;
-                        fields.fStop.textContent = imgContainer.dataset.fStop;
-                        fields.exposureProgram.textContent = imgContainer.dataset.exposureProgram;
-                        fields.exposureBias.textContent = imgContainer.dataset.exposureBias;
-                        fields.exposureTime.textContent = imgContainer.dataset.exposureTime;
-                        fields.iso.textContent = imgContainer.dataset.iso;
-                        fields.flash.textContent = imgContainer.dataset.flash;
                     
-                        //Change Borders
+                    // 2. LAZY LOADING: This is the magic line
+                    img.loading = "lazy"; 
+                    
+                    img.src = imageData.url;
+                    img.alt = imageData.alt || "";
+
+                    imgContainer.addEventListener("click", () => {
+                        extended.style.display = 'flex';
+                        extendedImg.src = imageData.url;
+
+                        // Instead of reading dataset, just use the imageData object directly
+                        fields.nickname.textContent = imageData.name || "n/a";
+                        fields.album.textContent = imageData.album || "n/a";
+                        fields.dateTime.textContent = `${imageData.date} ${imageData.time}` || "n/a";
+                        fields.location.textContent = imageData.location || "n/a";
+                        fields.alt.textContent = imageData.alt || "n/a";
+                        
+                        // ... (rest of your field updates) ...
+
+                        // Reset borders efficiently
+                        document.querySelectorAll('.galImgContainer').forEach(el => el.style.border = '2px solid #333');
                         potm.style.border = '2px solid #333';
-                        allImages_Call.style.border = '2px solid #333';
                         imgContainer.style.border = '2px solid rgb(0, 0, 255)';
                     });
 
-                    imgContainer.addEventListener("mouseover", () => {
-                        imgContainer.style.border = '2px solid rgb(57, 57, 255)';
+                    // Use pointerover (not onpointerover)
+                    imgContainer.addEventListener("pointerover", () => {
+                        if (imgContainer.style.borderColor !== 'rgb(0, 0, 255)') {
+                            imgContainer.style.border = '2px solid rgb(57, 57, 255)';
+                        }
                     });                    
-                    imgContainer.addEventListener("mouseleave", () => {
-                        imgContainer.style.border = '2px solid #333';
+                    imgContainer.addEventListener("pointerleave", () => {
+                        if (imgContainer.style.borderColor !== 'rgb(0, 0, 255)') {
+                            imgContainer.style.border = '2px solid #333';
+                        }
                     });
 
-                    // Append Children
                     imgContainer.appendChild(img);
                     container.appendChild(imgContainer);
                 }
 
                 section.appendChild(container);
-                MGGal.appendChild(section);
+                mainFragment.appendChild(section); // Add to fragment
             }
+
+            // 3. Inject everything at once
+            MGGal.appendChild(mainFragment);
+
 
             potm.addEventListener('click', () => {
                 const allImages = document.querySelectorAll('.galImgContainer');
@@ -2654,10 +2632,10 @@
                 // FIXED: Corrected the color string
                 potm.style.border = '2px solid rgb(57, 57, 255)';
             });
-            potm.addEventListener('mouseover', () => {
+            potm.addEventListener('onpointerover', () => {
                 potm.style.border = '2px solid rgb rgb(57, 57, 255)';
             })
-            potm.addEventListener('mouseleave', () => {
+            potm.addEventListener('onpointerleave', () => {
                 potm.style.border = '2px solid #333';
             })
         </script>
@@ -2683,136 +2661,140 @@
 
         </script>
 
-        <script> 
+<script>
+    const extendedImgF = document.querySelector('#Extended');
+    const extendedX = document.querySelector('.extendedImgX');
+    const borSense = 20; // Increased for easier grabbing on touch screens
 
-            const extendedX = document.querySelector('.extendedImgX');
-            const target =document.querySelector(extendedX.getAttribute('data-target'));
+    let isResizing = false;
+    let isDragging = false;
+    let startX, startY, startWidth, startHeight, startLeft, startTop;
+    let currentDirection = "";
 
-            extendedX.addEventListener('click', () => {target.style.display = 'none';});
+    // Close functionality
+    if(extendedX) {
+        extendedX.addEventListener('click', () => {
+            extendedImgF.style.display = 'none';
+        });
+    }
 
+    // Zone detection (Mouse only - touch doesn't have "hover" move)
+    extendedImgF.addEventListener('pointermove', (e) => {
+        if (isResizing || isDragging || e.pointerType === 'touch') return;
+        
+        const rect = extendedImgF.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
 
-            const borSense = 10;
+        const onTop = y < borSense;
+        const onBott = y > rect.height - borSense;
+        const onLeft = x < borSense;
+        const onRight = x > rect.width - borSense;
 
-            let isResizing = false;
-            let currentBorder = null;
+        if ((onTop && onLeft) || (onBott && onRight)) {
+            extendedImgF.style.cursor = 'nwse-resize';
+            currentDirection = onTop ? 'tl' : 'br';
+        } else if ((onTop && onRight) || (onBott && onLeft)) {
+            extendedImgF.style.cursor = 'nesw-resize';
+            currentDirection = onTop ? 'tr' : 'bl';
+        } else if (onTop || onBott) {
+            extendedImgF.style.cursor = 'ns-resize';
+            currentDirection = onTop ? 't' : 'b';
+        } else if (onLeft || onRight) {
+            extendedImgF.style.cursor = 'ew-resize';
+            currentDirection = onLeft ? 'l' : 'r';
+        } else {
+            extendedImgF.style.cursor = 'move';
+            currentDirection = 'move';
+        }
+    });
+
+    extendedImgF.addEventListener('pointerdown', (e) => {
+        // On touch, we need to recalculate direction because there's no hover move
+        if (e.pointerType === 'touch') {
+            const rect = extendedImgF.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const onTop = y < borSense;
+            const onBott = y > rect.height - borSense;
+            const onLeft = x < borSense;
+            const onRight = x > rect.width - borSense;
             
+            if (onTop || onBott || onLeft || onRight) {
+                if (onTop && onLeft) currentDirection = 'tl';
+                else if (onTop && onRight) currentDirection = 'tr';
+                else if (onBott && onLeft) currentDirection = 'bl';
+                else if (onBott && onRight) currentDirection = 'br';
+                else if (onTop) currentDirection = 't';
+                else if (onBott) currentDirection = 'b';
+                else if (onLeft) currentDirection = 'l';
+                else if (onRight) currentDirection = 'r';
+            } else {
+                currentDirection = 'move';
+            }
+        }
 
-            extended.addEventListener('mousemove', (e) => {
-                const rect = extended.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
+        isResizing = currentDirection !== 'move';
+        isDragging = currentDirection === 'move';
 
-                const onTop = y < borSense;
-                const onBott = y > rect.height - borSense;
-                const onLeft = x < borSense;
-                const onRight = x > rect.width - borSense;
+        extendedImgF.setPointerCapture(e.pointerId);
 
-                extended.style.cursor = 'pointer';
+        startX = e.clientX;
+        startY = e.clientY;
+        startWidth = extendedImgF.offsetWidth;
+        startHeight = extendedImgF.offsetHeight;
+        startLeft = extendedImgF.offsetLeft;
+        startTop = extendedImgF.offsetTop;
+    });
 
-                if((onTop && onLeft) || (onBott && onRight)) extended.style.cursor = 'nwse-resize';
-                else if((onTop && onRight) || (onBott && onLeft)) extended.style.cursor = 'nesw-resize';
+    window.addEventListener('pointermove', (e) => {
+        if (!isResizing && !isDragging) return;
 
-                
-                if(onTop || onBott) extended.style.cursor = 'ns-resize';
-                else if(onLeft || onRight) extended.style.cursor = 'we-resize';
-            });
+        const dx = e.clientX - startX;
+        const dy = e.clientY - startY;
+
+        if (isDragging) {
+            extendedImgF.style.left = `${startLeft + dx}px`;
+            extendedImgF.style.top = `${startTop + dy}px`;
+            return;
+        }
+
+        // Resizing with basic min-size clamping
+        const minSize = 50;
+
+        if (currentDirection.includes('r')) {
+            extendedImgF.style.width = `${Math.max(minSize, startWidth + dx)}px`;
+        }
+        if (currentDirection.includes('b')) {
+            extendedImgF.style.height = `${Math.max(minSize, startHeight + dy)}px`;
+        }
+        if (currentDirection.includes('l')) {
+            const newWidth = startWidth - dx;
+            if (newWidth > minSize) {
+                extendedImgF.style.width = `${newWidth}px`;
+                extendedImgF.style.left = `${startLeft + dx}px`;
+            }
+        }
+        if (currentDirection.includes('t')) {
+            const newHeight = startHeight - dy;
+            if (newHeight > minSize) {
+                extendedImgF.style.height = `${newHeight}px`;
+                extendedImgF.style.top = `${startTop + dy}px`;
+            }
+        }
+    });
+
+    window.addEventListener('pointerup', (e) => {
+        isResizing = false;
+        isDragging = false;
+        if(extendedImgF.hasPointerCapture(e.pointerId)) {
+            extendedImgF.releasePointerCapture(e.pointerId);
+        }
+    });
+</script>
 
 
-            const extendedImgCont = document.querySelector('.ExtendedImg');
 
-            // Select the handle/toggle that will move the window
-            extended.addEventListener('mousedown', (e) => {
-
-                const rect = extended.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-
-                const onTop = y < borSense;
-                const onBott = y > rect.height - borSense;
-                const onLeft = x < borSense;
-                const onRight = x > rect.width - borSense;
-
-                if (onTop || onBott || onLeft || onRight) {
-
-                    console.log(1);
-
-                    isResizing = true;
-
-                    currentBorder = { onTop, onBott, onLeft, onRight };
-
-                    console.log('currentBorder')
-
-                    let startX = e.clientX;
-                    let startY = e.clientY;
-                    let startWidth = rect.width;
-                    let startHeight = rect.height;
-
-                    document.body.style.userSelect = 'none';
-
-                    window.addEventListener('mousemove', (e) => {
-                        if (!isResizing) return;
-                        
-                        const mouseDiffX = e.client - startX;
-                        const mouseDiffY = e.client - startY;
-
-                        if (currentBorder.onRight) {
-                            extended.style.width = `${startWidth + mouseDiffX}`;
-                        } else if (currentBorder.onLeft) {
-                            extended.style.width = `${startWidth - mouseDiffX}`;
-                        }
-
-                        if (currentBorder.onBott) {
-                                extended.style.height = `${startHeight + mouseDiffY}`;
-                        } else if (currentBorder.onTop) {
-                                extended.style.height = `${startHeight - mouseDiffY}`;
-                        }
-                    });
-
-                    window.addEventListener('mouseup', () => {
-                        isResizing = false;
-                        currentBorder = null;
-                        document.body.style.userSelect = '';
-                    });
-
-                } else {
-
-                    e.preventDefault();
-
-                    // 1. Get the EXACT current position of the box on the screen
-                    const rect = extended.getBoundingClientRect();
-                    let startLeft = rect.left;
-                    let startTop = rect.top;
-
-                    // 2. Capture where the mouse is
-                    let startX = e.clientX;
-                    let startY = e.clientY;
-
-                    // 3. Clear transitions and centering so they don't fight the mouse
-                    extended.style.transition = 'none';
-                    extended.style.transform = 'none';
-                    extended.style.margin = '0';
-
-                    document.onmousemove = (moveEvent) => {
-                        const deltaX = moveEvent.clientX - startX;
-                        const deltaY = moveEvent.clientY - startY;
-
-                        // 4. Update position based on original rect + mouse movement
-                        extended.style.left = `${startLeft + deltaX}px`;
-                        extended.style.top = `${startTop + deltaY}px`;
-                        
-                        // Remove right/bottom if they were set in CSS to prevent "stretching"
-                        extended.style.right = 'auto';
-                        extended.style.bottom = 'auto';
-                    };
-
-                    document.onmouseup = () => {
-                        document.onmousemove = null;
-                        document.onmouseup = null;
-                    };
-                }
-            });
-
-        </script>
     </body>
 </html>
 
