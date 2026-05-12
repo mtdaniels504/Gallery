@@ -3,6 +3,7 @@
     <head>
         <title>_M_ational.Geographic Gallery&Shop</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <script type="text/javascript" src="https://www.redbubble.com/assets/external_portfolio.js"></script>
         
         <style id="General">
 
@@ -1970,11 +1971,11 @@
             .navBodyContent {
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
+                justify-content: space-between;
                 align-items: center;
                 width: 100%;
-                min-height: 226px;
-                max-height: 226px;
+                min-height: 280px;
+                max-height: 280px;
                 margin: 0 0 0 -10px;
                 gap: 5px;
                 background-color: #202020;
@@ -1986,9 +1987,9 @@
             .navBioSection, .navShopSection {
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
+                justify-content: flex-start;
                 align-items: center;
-                width: 80%;
+                width: 100%;
                 height: auto;
                 background: #505050;
                 border: 2px solid #555555;
@@ -1998,11 +1999,53 @@
                 gap: 2px;
             }
 
-            .navShopSection {
-                width: 400px;
-                height: 200px;
-                gap: 10px;
+
+            iframe {
+                width: 100%;
+                min-height: 220px;
+                max-height: 220px;
+                border-top-width: 0px;
+                border-bottom-width: 0px;
+                border-left-width: 0px;
+                border-right-width: 0px;
+                overflow: visible;
             }
+
+            iframe img, div#external-portfolio .product-grid .shop-product img {
+                width: 100%;
+                max-height: 180px;
+                border-top-width: 0px;
+                border-bottom-width: 0px;
+                border-left-width: 0px;
+                border-right-width: 0px;
+                overflow: visible;
+            }
+
+            #rb-xzfcxvzx {
+                width: 100%;
+                max-width: 100dvw;
+                height: auto;
+                gap: 0px;
+                margin: auto;
+                padding: 20px;
+                overflow-y: auto;
+                overflow-x: hidden;
+            }
+
+            .product-grid, #rb-xzfcxvzx html, #external-portfolio {
+                width: 100%;
+                height: auto;
+                gap: 0px;
+                margin: auto;
+                padding: 0;
+                overflow-y: auto;
+                overflow-x: hidden;
+            }
+
+             .product-grid a { 
+                height: 100px;
+                width: 300px;
+             }
 
             #navBio-Head {
                 width: 20%;
@@ -2019,6 +2062,14 @@
                 height: 180px;
                 margin-bottom: 10px;
                 gap: 10px;
+            }
+
+            .shopAll {
+                align-self: flex-end;
+                margin-left: auto;
+                margin-right: 10px;
+                right: 0;
+                text-decoration: none;
             }
 
             .navBioSection hr {
@@ -2954,10 +3005,11 @@
                 </div>
                 <div class="navBody" id="navBody-shop" style="display: none;">
                     <div class="navBodyContent" id="navShop">
-                        <div class="navShopSection">
-                            <h3>Coming Soon!</h3>
-                            <h3>Sponsored by RedBubble</h3>
+                        <div class="navShopSection" id="rb-xzfcxvzx">
                         </div>
+                        <a class="shopAll" href="https://www.redbubble.com/people/photosbymtd/shop?artistUserName=photosbymtd&collections=4496975&iaCode=all-departments&sortOrder=top%20selling">
+                            <button class="widthButton shopAll">Shop All</button>
+                        </a>
                     </div>
                 </div>
                 <div class="navBody" id="navBody-bio" style="display: none;">
@@ -3913,6 +3965,16 @@ requestAnimationFrame(() => {
             extendedImgF.releasePointerCapture(e.pointerId);
         }
     });
+</script>
+
+<script type="text/javascript">
+    window.onload = function() {
+        if (typeof RBExternalPortfolio !== 'undefined') {
+            new RBExternalPortfolio('www.redbubble.com', 'PhotosByMTD', 4, 3).renderIframe();
+        } else {
+            console.error('RBExternalPortfolio is not defined. Please check if the Redbubble script is loaded correctly.');
+        }
+    };
 </script>
 
 
