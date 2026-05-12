@@ -4,7 +4,6 @@
         <title>_M_ational.Geographic Gallery&Shop</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
         <script type="text/javascript" src="https://www.redbubble.com/assets/external_portfolio.js"></script>
-        
         <style id="General">
 
             /* ----- General ----- */
@@ -1869,6 +1868,7 @@
                 flex-direction: row;
                 align-items: center;
                 justify-content: center;
+                gap: 5px;
             }
 
             .navButton {
@@ -1970,7 +1970,7 @@
             .navBodyContent {
                 display: flex;
                 flex-direction: column;
-                justify-content: space-between;
+                justify-content: flex-end;
                 align-items: center;
                 width: 100%;
                 min-height: 280px;
@@ -1983,23 +1983,7 @@
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
             }
 
-            .navBioSection {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                width: 100%;
-                height: auto;
-                background: #505050;
-                border: 2px solid #555555;
-                color: #e9e9e9;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                border-radius: 2px;
-                gap: 2px;
-                margin-top: -10px;
-            }
-            
-            .navShopSection {
+            .navBioSection, .navShopSection {
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-start;
@@ -2014,21 +1998,31 @@
                 gap: 2px;
             }
 
+            .navBioSection {
+                justify-content: center;
+            }
+
+            .navShopSection {
+                margin-top: -10px;
+            }
+
 
             iframe {
                 width: 100%;
+                max-width: 100%;
                 min-height: 220px;
                 max-height: 220px;
                 border-top-width: 0px;
                 border-bottom-width: 0px;
                 border-left-width: 0px;
                 border-right-width: 0px;
-                overflow: visible;
+                overflow-x: auto;
+                display: flex;
+                justify-content: flex-start;
             }
 
             iframe img, div#external-portfolio .product-grid .shop-product img {
                 min-width: 26dvw;
-                width: 100%;
                 max-height: 180px;
                 border-top-width: 0px;
                 border-bottom-width: 0px;
@@ -2049,6 +2043,7 @@
             }
 
             .product-grid, #rb-xzfcxvzx html, #external-portfolio {
+                min-width: 100%;
                 width: 100%;
                 height: auto;
                 gap: 0px;
@@ -2056,9 +2051,14 @@
                 padding: 0;
                 overflow-y: auto;
                 overflow-x: hidden;
+            }
+
+            .product-grid {
                 display: flex;
+                flex-wrap: nowrap;
                 justify-content: center;
                 align-items: center;
+                gap: 10px;
             }
 
              .product-grid a { 
@@ -2087,7 +2087,6 @@
                 align-self: flex-end;
                 margin-left: auto;
                 margin-right: 10px;
-                margin-bottom: 10px;
                 right: 0;
                 text-decoration: none;
             }
@@ -2966,7 +2965,7 @@
                     </div>
                 </div>
                 <div class="navTabBut">
-                    <div class="IconAs navSection" id="navButtons">
+                    <div class="navSection" id="navButtons">
                         <div class="navButton">
                             <i class="IconA fa-solid fa-user"></i>
                         </div>
@@ -3103,7 +3102,7 @@
                     <p>works by MTD</p>
                 </div>
                 <div class="Right" id="chestHeadRight">
-                    <div class="IconAs navSection" id="cHRNavButtons">
+                    <div class="navSection" id="cHRNavButtons">
                         <div class="navButton">
                             <i class=" IconA fa-solid fa-sort"></i>
                         </div>
@@ -3987,17 +3986,10 @@ requestAnimationFrame(() => {
     });
 </script>
 
-<script type="text/javascript">
-    window.onload = function() {
-        if (typeof RBExternalPortfolio !== 'undefined') {
-            new RBExternalPortfolio('www.redbubble.com', 'PhotosByMTD', 4, 3).renderIframe();
-        } else {
-            console.error('RBExternalPortfolio is not defined. Please check if the Redbubble script is loaded correctly.');
-        }
-    };
+
+<script id="rb-xzfcxvzx" type="text/javascript">
+    new RBExternalPortfolio('www.redbubble.com', 'photosbymtd', 6, 5).renderIframe();
 </script>
-
-
 
     </body>
 </html>
