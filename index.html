@@ -19,9 +19,9 @@
 
             section {
                 z-index: 200;
-                margin: clamp(4px, 0.5dvw, 5px);
-                padding: clamp(2px, 0.5dvw, 5px);
-                width: clamp(100% - 8px, 100% - 1dvw, 100% - 10px);
+                margin: 5px;
+                padding: clamp(4px, .4rem + 0.6dvw, 5px);
+                width: calc(100% - 10px);
                 border-radius: 4px;
                 box-shadow: 0 0 10px rgba(242, 242, 246, 0.2);
             }            
@@ -50,8 +50,8 @@
             /* -- Text -- */
 
             h1 {
-                font-weight: 800;
-                font-size: clamp(1rem, 0.75rem + 1.5dvw, 1.5rem);
+                font-weight: 750;
+                font-size: calc(0.62rem + .96dvw);
                 text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.09);
             }
 
@@ -63,19 +63,19 @@
 
             h3, h4 {
                 font-weight: 625;
-                font-size: clamp(0.625rem, 0.375rem + 1.06dvw, .9rem);
+                font-size: calc(0.25rem + 1dvw);
                 text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
             }
 
-            button  {
-                font-size: clamp(0.57rem, 0.5rem + .7dvw, 0.85rem);
+            span, strong, button  {
+                font-size: calc(0.4rem + .8dvw);
                 text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.03);
             }
             
             h5, p, 
-            span, details, a, strong, 
+            details, a,
             input, textarea, select, option  {
-                font-size: clamp(0.55rem, 0.3rem + .7dvw, 0.75rem);
+                font-size: calc(0.32rem + 1dvw);
                 text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.03);
             }
 
@@ -160,9 +160,9 @@
                 justify-content: center;
                 align-items: center;
                 width: auto;
-                min-height: 22px;
-                height: 2.9dvw;
-                max-height: 32px;
+                min-height: 32px;
+                height: 3.4dvw;
+                max-height: 40px;
                 perspective: 5px;
                 border-radius: 2.5px;
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -184,7 +184,7 @@
             .widthButton {
                 min-width: 66px;
                 width: 12dvw;
-                max-width: 100px;
+                max-width: 120px;
             }
 
             .smallButton {
@@ -1482,7 +1482,7 @@
 
             #plane1 {
                 z-index: 001;
-                padding: 5px;
+                padding: clamp(4px, .4rem + 0.6dvw, 5px);
             }
 
             #plane2 {
@@ -1497,7 +1497,7 @@
 
             /* ----- Ext Section ----- */
 
-            #Extended {
+            #extContainer {
                 z-index: 800;
                 position: fixed;
                 min-width: calc(100% - 4px);
@@ -1710,6 +1710,8 @@
                 display: flex;
                 align-items: flex-start;
                 justify-content: center;
+                z-index: 800;
+                position: fixed;
             }
 
             .extHead {
@@ -1778,10 +1780,12 @@
             #navPhoto {
                 margin: 10px;
                 padding: 0;
-                min-width: 65px;
-                width: 65px;
-                min-height: 65px;
-                height: 65px;
+                min-width: calc(2.5rem + 4.5dvw);
+                width: calc(2.5rem + 4.5dvw);
+                max-width: calc(2.5rem + 4.5dvw);
+                min-height: calc(2.5rem + 4.5dvw);
+                height: calc(2.5rem + 4.5dvw);
+                max-height: calc(2.5rem + 4.5dvw);
                 border-radius: 50%;
                 border: 2px solid #ccc;
                 overflow: hidden;
@@ -1791,7 +1795,7 @@
             }
 
             #navPhoto img {
-                width: 300%;
+                width: 400%;
                 margin: -2px 0 0 -20px;
             }
 
@@ -1911,21 +1915,21 @@
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                justify-content: space-evenly;
-                gap: 5px;
+                justify-content: center;
+                gap: 8px;
                 padding: 0;
                 margin: 5px;
+                min-width: 100%;
                 max-width: 100%;
-                overflow-x: auto;
-                overflow-y: none;
             }
 
             .link {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                min-width: 196px;
-                max-width: 196px;
+                min-width: 140px;
+                width: 29dvw;
+                max-width: 300px;
                 gap: 10px;
                 background-color: #202020;
                 border: 1.5px solid #252525;
@@ -2624,7 +2628,7 @@
             .cMRTail {
                 flex: 1;
                 width: 100%;
-                margin: 0;
+                margin: 25px 0 0 0;
                 padding: 2px;
                 border: 2px solid #151515;
                 border-radius: 2px;
@@ -2708,24 +2712,23 @@
             }
 
             .DetailSpec {
+                display: flex;
+                text-align: center;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-evenly;
                 background: #6e6e6e;
                 border: 2px solid #777777;
                 flex: 1;
                 min-width: calc(50% - 10px);
                 width: calc(50% - 10px);
                 max-width: calc(50% - 10px);
-                height: 46px;
+                height: clamp(6dvw, 6dvw, 6dvw);
                 padding: 0px 2px 1px 2px;
                 background: #777777;
                 border: 2px solid #8f8f8f;
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
                 overflow: hidden;
-            }
-
-            .DetailSpecs2 .DetailSpec {
-                min-width: calc(50% - 15px);
-                width: calc(50% - 15px);
-                max-width: calc(50% - 15px);
             }
 
             .DetailSpec:hover {
@@ -2742,7 +2745,6 @@
             .DetailSpec span {
                 margin: 0;
                 padding: 1px 2px;
-                line-height: 18px;
             }
 
             #fileType hr {
@@ -2847,7 +2849,7 @@
         <section id="Extended" style="display:none;">
             <div class="ExtendedImg">
                 <div class="extHead">
-                    <button class="IconD exitButton extendedImgX fa-solid fa-xmark" data-target="#Extended"></button>
+                    <button class="IconB exitButton extendedImgX fa-solid fa-xmark" data-target="#Extended"></button>
                 </div>
                 
                 <img src="IMG_7729.JPG">
@@ -2888,7 +2890,7 @@
                 </div>
                 <div class="navSection" id="navTitle">
                     <div class="navTitle-content">
-                        <h3>Matthew T. Daniels</h3>
+                        <h1>Matthew T. Daniels</h1>
                         <p>...and yet it moves.</p>
                     </div>
                 </div>
@@ -2916,35 +2918,35 @@
                     <div class="links">
                         <div class="linksRow">
                             <a href="https://www.facebook.com/matt.daniels.735944/">
-                                <div class="link">
+                                <div class="widthButton link">
                                     <img src="Facebook_Icon.png">
-                                    <p>Matthew T. Daniels</p>
+                                    <h4>Matthew T. Daniels</h4>
                                 </div>
                             </a>
                             <a href="https://www.instagram.com/matthewthomasdaniels">
-                                <div class="link">
+                                <div class="widthButton link">
                                     <img src="Instagram_Icon.png">
-                                    <p>@matthewthomasdaniels</p>
+                                    <h4>@matthewthomasdaniels</h4>
                                 </div>
                             </a>
                         </div>
                         <hr class="shadow">
                         <div class="linksRow">
                             <a href="https://www.facebook.com/profile.php?id=61550671985056">
-                                <div class="link">
+                                <div class="widthButton link">
                                     <img src="Facebook_Icon.png">
-                                    <p>The World Motor Market</p>
+                                    <h4>The World Motor Market</h4>
                                 </div>
                             </a>                        
                             <a href="https://www.instagram.com/_m_ational.geographic/">
-                            <div class="link">
+                            <div class="widthButton link">
                                 <img src="Instagram_Icon.png">
-                                <p>@_M_ational.Geographic</p>
+                                <h4>@_M_ational.Geographic</h4>
                             </div>                        
                             <a href="https://www.instagram.com/worldmotormarket_gallery">
-                            <div class="link">
+                            <div class="widthButton link">
                                 <img src="Instagram_Icon.png">
-                                <p>@worldmotormarket_gallery</p>
+                                <h4>@worldmotormarket_gallery</h4>
                             </div>
                             </a>
                         </div>
@@ -3123,24 +3125,20 @@
                                     <div class="DetailSpecs">
                                         <div class="DetailSpec" id="fileType">
                                             <strong>File Type</strong>
-                                            <hr>
                                             <span></span>
                                         </div>
                                         <div class="DetailSpec" id="fileSize">
                                             <strong>File Size</strong>
-                                            <hr>
                                             <span></span>
                                         </div>
                                     </div>
                                     <div class="DetailSpecs">
                                         <div class="DetailSpec" id="dimensions">
                                             <strong>Dimensions</strong>
-                                            <hr>
                                             <span></span>
                                         </div>
                                         <div class="DetailSpec" id="rating">
                                             <strong>Rating</strong>
-                                            <hr>
                                             <span></span>
                                         </div>
                                     </div>
@@ -3163,7 +3161,7 @@
                                         <span></span>
                                     </div>
                                     <div class="DetailSpec" id="exposureProgram">
-                                        <strong>Exposure Program</strong>
+                                        <strong>Exposure Prog</strong>
                                         <span></span>
                                     </div>
                                     <div class="DetailSpec" id="exposureBias">
@@ -3632,7 +3630,7 @@
                 fields.dimensions.textContent = mgImages["Tucson"]["4"].dimensions || 'n/a';
                 fields.rating.textContent = mgImages["Tucson"]["4"].rating || 'n/a';
 
-                fields.camera.textContent = mgImages["Tucson"]["4"].dataset.camera || 'n/a';
+                fields.camera.textContent = mgImages["Tucson"]["4"].camera || 'n/a';
                 fields.lens.textContent = mgImages["Tucson"]["4"].lens || 'n/a';
                 fields.focalLength.textContent = mgImages["Tucson"]["4"].focalLength || 'n/a';
                 fields.fStop.textContent = mgImages["Tucson"]["4"].fStop || 'n/a';
