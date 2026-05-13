@@ -1,9 +1,10 @@
 <!doctype html>
 <html lang="en">
     <head>
+
         <title>_M_ational.Geographic Gallery&Shop</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-        <script type="text/javascript" src="https://www.redbubble.com/assets/external_portfolio.js"></script>
+        
         <style id="General">
 
             /* ----- General ----- */
@@ -2006,65 +2007,46 @@
                 margin-top: -10px;
             }
 
-
-            iframe {
-                width: 100%;
-                max-width: 100%;
-                min-height: 220px;
-                max-height: 220px;
-                border-top-width: 0px;
-                border-bottom-width: 0px;
-                border-left-width: 0px;
-                border-right-width: 0px;
-                overflow-x: auto;
-                display: flex;
-                justify-content: flex-start;
-            }
-
-            iframe img, div#external-portfolio .product-grid .shop-product img {
-                min-width: 26dvw;
-                max-height: 180px;
-                border-top-width: 0px;
-                border-bottom-width: 0px;
-                border-left-width: 0px;
-                border-right-width: 0px;
-                overflow: visible;
-            }
-
-            #rb-xzfcxvzx {
-                width: 100%;
-                max-width: 100dvw;
-                height: auto;
-                gap: 0px;
-                margin: auto;
-                padding: 20px;
-                overflow-y: auto;
-                overflow-x: hidden;
-            }
-
-            .product-grid, #rb-xzfcxvzx html, #external-portfolio {
-                min-width: 100%;
-                width: 100%;
-                height: auto;
-                gap: 0px;
-                margin: auto;
-                padding: 0;
-                overflow-y: auto;
-                overflow-x: hidden;
-            }
-
             .product-grid {
                 display: flex;
                 flex-wrap: nowrap;
                 justify-content: center;
                 align-items: center;
+                width: 100%;
                 gap: 10px;
             }
 
-             .product-grid a { 
-                height: 100px;
-                width: 300px;
-             }
+            .product-item a { 
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 26dvw;
+                max-height: 26dvw;
+                width: 26dvw;
+                max-width: 26dvw;
+                border-radius: 5px;
+                object-fit: contain;
+            }
+
+            .product-item img {
+                height: 100%;
+                max-height: 100%;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .product-item-head {
+                z-index: 250;
+                position: absolute;
+                top: 0;
+            }
+
+            .product-item-text {
+                z-index: 250;
+                position: absolute;
+                bottom: 0;
+            }
 
             #navBio-Head {
                 width: 20%;
@@ -3024,11 +3006,14 @@
                 </div>
                 <div class="navBody" id="navBody-shop" style="display: none;">
                     <div class="navBodyContent" id="navShop">
-                        <div class="navShopSection" id="rb-xzfcxvzx">
+                        <div class="shopBody" id="navShopBody">
+                            <div class="product-grid" id="product-grid">
+                                <!-- Dynamic Featured Section -->
+                            </div>
+                            <a class="shopAll" href="https://www.redbubble.com/people/photosbymtd/shop?artistUserName=photosbymtd&collections=4496975&iaCode=all-departments&sortOrder=top%20selling">
+                                <button class="widthButton shopAll">Shop All</button>
+                            </a>
                         </div>
-                        <a class="shopAll" href="https://www.redbubble.com/people/photosbymtd/shop?artistUserName=photosbymtd&collections=4496975&iaCode=all-departments&sortOrder=top%20selling">
-                            <button class="widthButton shopAll">Shop All</button>
-                        </a>
                     </div>
                 </div>
                 <div class="navBody" id="navBody-bio" style="display: none;">
@@ -3352,7 +3337,7 @@
             });
         </script>
         
-        <script>
+        <script id="Gallery">
             //POTM Border
             const potm = document.getElementById('pmImgContainer');
             potm.style.border = '2px solid rgb(0, 0, 255)';
@@ -3830,6 +3815,67 @@ requestAnimationFrame(() => {
             })
             potm.addEventListener('onpointerleave', () => {
                 potm.style.border = '2px solid #333';
+            })
+        </script>
+
+        <script id="Featured">
+            const FeaturedObject = {
+                "Dusk in New Orleans": {
+                    "Premium Oversized Sweatshirt": {itemPrice: "$54.77", src: "IMG_8295.jpeg", href: "https://www.redbubble.com/i/sweatshirt/Dusk-in-New-Orleans-by-PhotsByMTD/180682195/cdux?asc=u"},
+                    "Mouse Pad": {itemPrice: "$19.43", src: "IMG_8296.jpeg", href: "https://www.redbubble.com/i/mouse-pad/Dusk-in-New-Orleans-by-PhotsByMTD/180682195/2mh5?asc=u"},
+                    "Bucket Hat": {itemPrice: "$23.80", src: "IMG_8297.jpeg", href: "https://www.redbubble.com/i/bucket-hat/Dusk-in-New-Orleans-by-PhotsByMTD/180682195/3vy7?asc=u"},
+                    "Racerback Tank Top": {itemPrice: "$22.83", src: "IMG_8305.jpeg", href: "https://www.redbubble.com/i/tank-top/Dusk-in-New-Orleans-by-PhotsByMTD/180682195/wwtp?asc=u"},
+                    "Tank Top": {itemPrice: "$21.33", src: "IMG_8306.jpeg", href: "https://www.redbubble.com/i/tank-top/Dusk-in-New-Orleans-by-PhotsByMTD/180682195/5xql?asc=u"},
+                    "Framed Print": {itemPrice: "$87.64", src: "IMG_8308.jpeg", href: "https://www.redbubble.com/i/framed-print/Dusk-in-New-Orleans-by-PhotsByMTD/180682195/lmcv?asc=u"},
+                    "Canvas Print": {itemPrice: "$52.40", src: "IMG_8309.jpeg", href: "https://www.redbubble.com/i/canvas-print/Dusk-in-New-Orleans-by-PhotsByMTD/180682195/5mul?asc=u"},
+                    "Postcard": {itemPrice: "$2.33", src: "IMG_8310.jpeg", href: "https://www.redbubble.com/i/postcard/Dusk-in-New-Orleans-by-PhotsByMTD/180682195/vk5y?asc=u"},
+                    "Clock": {itemPrice: "$33.20", src: "IMG_8312.jpeg", href: "https://www.redbubble.com/i/clock/Dusk-in-New-Orleans-by-PhotsByMTD/180682195/l4nc?asc=u"},
+                },
+                "Sunset City on the Bay": {
+                    "Premium Oversized Sweatshirt": {itemPrice: "$54.77", src: "IMG_8323.jpeg", href: "https://www.redbubble.com/i/sweatshirt/Sunset-City-on-the-Bay-by-PhotsByMTD/180682195/cdux?asc=u"},
+                    "Bucket Hat": {itemPrice: "$23.80", src: "IMG_8324.jpeg", href: "https://www.redbubble.com/i/bucket-hat/Sunset-City-on-the-Bay-by-PhotsByMTD/180682195/3vy7?asc=u"},
+                    "MagSafe Tough iPhone Case": {itemPrice: "$43.28", src: "IMG_8325.jpeg", href: "https://www.redbubble.com/i/iphone-case/Sunset-City-on-the-Bay-by-PhotsByMTD/180682195/c4kx?asc=u"},
+                    "Active T-Shirt": {itemPrice: "$26.67", src: "IMG_8326.jpeg", href: "https://www.redbubble.com/i/t-shirt/Sunset-City-on-the-Bay-by-PhotsByMTD/180682195/z4fd?asc=u"},
+                    "Art-Board Print": {itemPrice: "$10.00", src: "IMG_8328.jpeg", href: "https://www.redbubble.com/i/art-board-print/Sunset-City-on-the-Bay-by-PhotsByMTD/180682195/xpmg?asc=u"},
+                    "Canvas Print": {itemPrice: "$52.40", src: "IMG_8329.jpeg", href: "https://www.redbubble.com/i/canvas-print/Sunset-City-on-the-Bay-by-PhotsByMTD/180682195/5mul?asc=u"},
+                    "Clock": {itemPrice: "$33.20", src: "IMG_8330.jpeg", href: "https://www.redbubble.com/i/clock/Sunset-City-on-the-Bay-by-PhotsByMTD/180682195/l4nc?asc=u"},
+                    "Coasters /(Set of 4/)": {itemPrice: "$16.02", src: "IMG_8331.jpeg", href: "https://www.redbubble.com/i/coasters/Sunset-City-on-the-Bay-by-PhotsByMTD/180682195/43wr?asc=u"},
+                    "Throw Pillow": {itemPrice: "$20.63", src: "IMG_8332.jpeg", href: "https://www.redbubble.com/i/throw-pillow/Sunset-City-on-the-Bay-by-PhotsByMTD/180682195/xwxm?asc=u"},
+                },
+                "Sunset City on the Bay": {
+                    "Premium Oversized Sweatshirt": {itemPrice: "$54.77", src: "IMG_8323.jpeg", href: "https://www.redbubble.com/i/sweatshirt/American-Pastime-by-PhotsByMTD/180682195/cdux?asc=u"},
+                    "Small Magnet": {itemPrice: "$7.06", src: "IMG_8324.jpeg", href: "https://www.redbubble.com/i/magnet/American-Pastime-by-PhotsByMTD/180682195/8gzh?asc=u"},
+                    "Holographic Sticker": {itemPrice: "$3.52", src: "IMG_8325.jpeg", href: "https://www.redbubble.com/i/holographic-sticker/American-Pastime-by-PhotsByMTD/180682195/mtb4?asc=u"},
+                    "Pullover Sweatshirt": {itemPrice: "$37.05", src: "IMG_8326.jpeg", href: "https://www.redbubble.com/i/sweatshirt/American-Pastime-by-PhotsByMTD/180682195/du6s?asc=u"},
+                    "Art-Board Print": {itemPrice: "$10.00", src: "IMG_8328.jpeg", href: "https://www.redbubble.com/i/art-board-print/American-Pastime-by-PhotsByMTD/180682195/xpmg?asc=u"},
+                    "Clock": {itemPrice: "$33.20", src: "IMG_8330.jpeg", href: "https://www.redbubble.com/i/clock/American-Pastime-by-PhotsByMTD/180682195/l4nc?asc=u"},
+                    "Coasters /(Set of 4/)": {itemPrice: "$16.02", src: "IMG_8331.jpeg", href: "https://www.redbubble.com/i/coasters/American-Pastime-by-PhotsByMTD/180682195/43wr?asc=u"},
+                    "Tote Bag": {itemPrice: "$23.51", src: "IMG_8332.jpeg", href: "https://www.redbubble.com/i/tote-bag/American-Pastime-by-PhotsByMTD/180682195/xd4m?asc=u"},
+                },
+            }
+
+
+            const grid = document.getElementById('product-grid')
+
+            const allArtwork = Object.values(FeaturedObject);
+            const shuffled1 = allArtwork.sort(() => 0.5 - Math.random());
+            const selectedArtwork = shuffled1.slice(0,3);
+
+            selectedArtwork.forEach(artwork => {
+                const allItems = Object.values(artwork);
+                const shuffled2 = allItems.sort(() => 0.5 - Math.random());
+                const selectedItem = shuffled2.slice(0,3);
+
+                selectedItem.forEach(item => {
+                    grid.innerHTML += `
+                        <div class="product-item">
+                            <a href="${item.href}">
+                                <img src="item.src" alt="${artwork} ${item}">
+                                <p>${item.itemPrice}</p>
+                            </a>
+                        </div>
+                    `;
+                })
             })
         </script>
         
