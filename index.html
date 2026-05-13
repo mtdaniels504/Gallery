@@ -2021,10 +2021,10 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                height: 20dvw;
-                max-height: 20dvw;
-                width: 20dvw;
-                max-width: 20dvw;
+                height: 16dvw;
+                max-height: 16dvw;
+                width: 16dvw;
+                max-width: 16dvw;
                 border-radius: 5px;
                 object-fit: contain;
                 text-decoration: none;
@@ -2043,7 +2043,7 @@
                 align-items: center;
                 text-align: center;
                 z-index: 250;
-                position: absolute;
+                position: relative;
                 top: 0;
                 text-decoration: none;
             }
@@ -2054,7 +2054,7 @@
                 align-items: center;
                 text-align: center;
                 z-index: 250;
-                position: absolute;
+                position: relative;
                 bottom: 0;
                 text-decoration: none;
             }
@@ -3863,6 +3863,7 @@ requestAnimationFrame(() => {
                     "Coasters /(Set of 4/)": {itemPrice: "$16.02", src: "IMG_8331.jpeg", href: "https://www.redbubble.com/i/coasters/American-Pastime-by-PhotsByMTD/180682195/43wr?asc=u"},
                     "Tote Bag": {itemPrice: "$23.51", src: "IMG_8332.jpeg", href: "https://www.redbubble.com/i/tote-bag/American-Pastime-by-PhotsByMTD/180682195/xd4m?asc=u"},
                 },
+                "Lamp Shade"
             }
 
 
@@ -3882,10 +3883,10 @@ requestAnimationFrame(() => {
                         <div class="product-item">
                             <a href="${item.href}">
                                 <div class="product-item-head">
-                                    h4>${artwork}</h4>
+                                    <h4>${artwork}</h4>
                                 </div>
                                 <img src="${item.src}" alt="${artwork} ${item}">
-                                <div class="product-text">
+                                <div class="product-item-text">
                                     <h5>${item}</h5>
                                     <p>${item.itemPrice}</p>
                                 </div>
