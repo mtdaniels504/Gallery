@@ -2021,12 +2021,13 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                height: 26dvw;
-                max-height: 26dvw;
-                width: 26dvw;
-                max-width: 26dvw;
+                height: 20dvw;
+                max-height: 20dvw;
+                width: 20dvw;
+                max-width: 20dvw;
                 border-radius: 5px;
                 object-fit: contain;
+                text-decoration: none;
             }
 
             .product-item img {
@@ -2037,15 +2038,25 @@
             }
 
             .product-item-head {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
                 z-index: 250;
                 position: absolute;
                 top: 0;
+                text-decoration: none;
             }
 
             .product-item-text {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                text-align: center;
                 z-index: 250;
                 position: absolute;
                 bottom: 0;
+                text-decoration: none;
             }
 
             #navBio-Head {
@@ -3859,19 +3870,25 @@ requestAnimationFrame(() => {
 
             const allArtwork = Object.values(FeaturedObject);
             const shuffled1 = allArtwork.sort(() => 0.5 - Math.random());
-            const selectedArtwork = shuffled1.slice(0,3);
+            const selectedArtwork = shuffled1.slice(0,2);
 
             selectedArtwork.forEach(artwork => {
                 const allItems = Object.values(artwork);
                 const shuffled2 = allItems.sort(() => 0.5 - Math.random());
-                const selectedItem = shuffled2.slice(0,3);
+                const selectedItem = shuffled2.slice(0,2);
 
                 selectedItem.forEach(item => {
                     grid.innerHTML += `
                         <div class="product-item">
                             <a href="${item.href}">
-                                <img src="item.src" alt="${artwork} ${item}">
-                                <p>${item.itemPrice}</p>
+                                <div class="product-item-head">
+                                    h4>${artwork}</h4>
+                                </div>
+                                <img src="${item.src}" alt="${artwork} ${item}">
+                                <div class="product-text">
+                                    <h5>${item}</h5>
+                                    <p>${item.itemPrice}</p>
+                                </div>
                             </a>
                         </div>
                     `;
@@ -4033,9 +4050,6 @@ requestAnimationFrame(() => {
 </script>
 
 
-<script id="rb-xzfcxvzx" type="text/javascript">
-    new RBExternalPortfolio('www.redbubble.com', 'photosbymtd', 6, 5).renderIframe();
-</script>
 
     </body>
 </html>
