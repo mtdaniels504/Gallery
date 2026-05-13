@@ -2028,6 +2028,7 @@
                 border-radius: 5px;
                 object-fit: contain;
                 text-decoration: none;
+                position: absolute;
             }
 
             .product-item img {
@@ -3853,7 +3854,8 @@ requestAnimationFrame(() => {
                     "Coasters /(Set of 4/)": {itemPrice: "$16.02", src: "IMG_8331.jpeg", href: "https://www.redbubble.com/i/coasters/Sunset-City-on-the-Bay-by-PhotsByMTD/180682195/43wr?asc=u"},
                     "Throw Pillow": {itemPrice: "$20.63", src: "IMG_8332.jpeg", href: "https://www.redbubble.com/i/throw-pillow/Sunset-City-on-the-Bay-by-PhotsByMTD/180682195/xwxm?asc=u"},
                 },
-                "Sunset City on the Bay": {
+                // FIX 1: Changed duplicate key name from "Sunset City on the Bay" to "American Pastime"
+                "American Pastime": {
                     "Premium Oversized Sweatshirt": {itemPrice: "$54.77", src: "IMG_8323.jpeg", href: "https://www.redbubble.com/i/sweatshirt/American-Pastime-by-PhotsByMTD/180682195/cdux?asc=u"},
                     "Small Magnet": {itemPrice: "$7.06", src: "IMG_8324.jpeg", href: "https://www.redbubble.com/i/magnet/American-Pastime-by-PhotsByMTD/180682195/8gzh?asc=u"},
                     "Holographic Sticker": {itemPrice: "$3.52", src: "IMG_8325.jpeg", href: "https://www.redbubble.com/i/holographic-sticker/American-Pastime-by-PhotsByMTD/180682195/mtb4?asc=u"},
@@ -3863,38 +3865,54 @@ requestAnimationFrame(() => {
                     "Coasters /(Set of 4/)": {itemPrice: "$16.02", src: "IMG_8331.jpeg", href: "https://www.redbubble.com/i/coasters/American-Pastime-by-PhotsByMTD/180682195/43wr?asc=u"},
                     "Tote Bag": {itemPrice: "$23.51", src: "IMG_8332.jpeg", href: "https://www.redbubble.com/i/tote-bag/American-Pastime-by-PhotsByMTD/180682195/xd4m?asc=u"},
                 },
-                "Lamp Shade"
+                "Lamp Shade": {
+                    "Mouse Pad": {itemPrice: "$19.43", src: "IMG_8296.jpeg", href: "https://www.redbubble.com/i/mouse-pad/Lamp-Shade-by-PhotsByMTD/180682195/2mh5?asc=u"},
+                    "Bucket Hat": {itemPrice: "$23.80", src: "IMG_8324.jpeg", href: "https://www.redbubble.com/i/bucket-hat/Lamp-Shade-by-PhotsByMTD/180682195/3vy7?asc=u"},
+                    "Holographic Sticker": {itemPrice: "$3.52", src: "IMG_8325.jpeg", href: "https://www.redbubble.com/i/holographic-sticker/Lamp-Shade-by-PhotsByMTD/180682195/mtb4?asc=u"},
+                    "Classic T-Shirt": {itemPrice: "$21.19", src: "IMG_8326.jpeg", href: "https://www.redbubble.com/i/t-shirt/Lamp-Shade-by-PhotsByMTD/180682195/lrcw?asc=u"},
+                    "Pullover Hoodie": {itemPrice: "$41.33", src: "IMG_8328.jpeg", href: "https://www.redbubble.com/i/hoodie/Lamp-Shade-by-PhotsByMTD/180682195/2j5j?asc=u"},
+                    "Laptop Sleeve": {itemPrice: "$40.32", src: "IMG_8329.jpeg", href: "https://www.redbubble.com/i/canvas-print/Lamp-Shade-by-PhotsByMTD/180682195/5mul?asc=u"},
+                    "Coasters /(Set of 4/)": {itemPrice: "$16.02", src: "IMG_8331.jpeg", href: "https://www.redbubble.com/i/coasters/Lamp-Shade-by-PhotsByMTD/180682195/43wr?asc=u"},
+                    "Fitted Scoop T-Shirt": {itemPrice: "$24.76", src: "IMG_8330.jpeg", href: "https://www.redbubble.com/i/t-shirt/Lamp-Shade-by-PhotsByMTD/180682195/nz95?asc=u"},
+                    "Relaxed T-Shirt": {itemPrice: "$22.97", src: "IMG_8332.jpeg", href: "https://www.redbubble.com/i/t-shirt/Lamp-Shade-by-PhotsByMTD/180682195/xmgc?asc=u"},
+                },
+            };
+
+            const grid = document.getElementById('product-grid');
+
+            // FIX 3: Robust alternative picker function to avoid math.random sort bugs
+            function getRandomElements(array, count) {
+                const shuffled = [...array].sort(() => Math.random() - 0.5);
+                return shuffled.slice(0, count);
             }
 
+            // FIX 2: Used Object.entries to retrieve both the string keys and the value objects
+            const allArtwork = Object.entries(FeaturedObject);
+            const selectedArtwork = getRandomElements(allArtwork, 2);
 
-            const grid = document.getElementById('product-grid')
+            selectedArtwork.forEach(([artworkName, artworkItems]) => {
+                const allItems = Object.entries(artworkItems);
+                const selectedItems = getRandomElements(allItems, 2);
 
-            const allArtwork = Object.values(FeaturedObject);
-            const shuffled1 = allArtwork.sort(() => 0.5 - Math.random());
-            const selectedArtwork = shuffled1.slice(0,2);
-
-            selectedArtwork.forEach(artwork => {
-                const allItems = Object.values(artwork);
-                const shuffled2 = allItems.sort(() => 0.5 - Math.random());
-                const selectedItem = shuffled2.slice(0,2);
-
-                selectedItem.forEach(item => {
+                selectedItems.forEach(([itemName, itemDetails]) => {
+                    // Clear injection mapping variables safely
                     grid.innerHTML += `
                         <div class="product-item">
-                            <a href="${item.href}">
+                            <a href="${itemDetails.href}">
                                 <div class="product-item-head">
-                                    <h4>${artwork}</h4>
+                                    <h4>${artworkName}</h4>
                                 </div>
-                                <img src="${item.src}" alt="${artwork} ${item}">
+                                <img src="${itemDetails.src}" alt="${artworkName} ${itemName}">
                                 <div class="product-item-text">
-                                    <h5>${item}</h5>
-                                    <p>${item.itemPrice}</p>
+                                    <h5>${itemName}</h5>
+                                    <p>${itemDetails.itemPrice}</p>
                                 </div>
                             </a>
                         </div>
                     `;
-                })
-            })
+                });
+            });
+
         </script>
         
         <script>
