@@ -3929,11 +3929,11 @@ requestAnimationFrame(() => {
 
             // FIX 2: Used Object.entries to retrieve both the string keys and the value objects
             const allArtwork = Object.entries(FeaturedObject);
-            const selectedArtwork = getRandomElements(allArtwork, 2);
+            const selectedArtwork = getRandomElements(allArtwork, 4);
 
             selectedArtwork.forEach(([artworkName, artworkItems]) => {
                 const allItems = Object.entries(artworkItems);
-                const selectedItems = getRandomElements(allItems, 2);
+                const selectedItems = getRandomElements(allItems, 1);
 
                 selectedItems.forEach(([itemName, itemDetails]) => {
                     // Clear injection mapping variables safely
