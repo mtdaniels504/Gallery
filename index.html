@@ -3195,12 +3195,12 @@
                                 <hr>
                                 <div class="cMRMain">
                                     <div class="DetailSpecs">
-                                        <div class="DetailSpec" id="fileType">
-                                            <strong>File Type</strong>
+                                        <div class="DetailSpec" id="camera">
+                                            <strong>Camera Details</strong>
                                             <span></span>
                                         </div>
-                                        <div class="DetailSpec" id="fileSize">
-                                            <strong>File Size</strong>
+                                        <div class="DetailSpec" id="rating">
+                                            <strong>Rating</strong>
                                             <span></span>
                                         </div>
                                     </div>
@@ -3209,17 +3209,13 @@
                                             <strong>Dimensions</strong>
                                             <span></span>
                                         </div>
-                                        <div class="DetailSpec" id="rating">
-                                            <strong>Rating</strong>
+                                        <div class="DetailSpec" id="fileSize">
+                                            <strong>File Size</strong>
                                             <span></span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="DetailSpecs DetailSpecs2">
-                                    <div class="DetailSpec" id="camera">
-                                        <strong>Camera Details</strong>
-                                        <span></span>
-                                    </div>
                                     <div class="DetailSpec" id="lens">
                                         <strong>Lens Details</strong>
                                         <span></span>
@@ -3697,12 +3693,11 @@
                 fields.location.textContent = mgImages["Tucson"]["4"].location || 'n/a';
                 fields.alt.textContent = mgImages["Tucson"]["4"].alt || 'n/a';
 
-                fields.fileType.textContent = mgImages["Tucson"]["4"].fileType || 'n/a';
+                fields.camera.textContent = mgImages["Tucson"]["4"].camera || 'n/a';
+                fields.rating.textContent = mgImages["Tucson"]["4"].rating || 'n/a';
                 fields.fileSize.textContent = mgImages["Tucson"]["4"].fileSize || 'n/a';
                 fields.dimensions.textContent = mgImages["Tucson"]["4"].dimensions || 'n/a';
-                fields.rating.textContent = mgImages["Tucson"]["4"].rating || 'n/a';
 
-                fields.camera.textContent = mgImages["Tucson"]["4"].camera || 'n/a';
                 fields.lens.textContent = mgImages["Tucson"]["4"].lens || 'n/a';
                 fields.focalLength.textContent = mgImages["Tucson"]["4"].focalLength || 'n/a';
                 fields.fStop.textContent = mgImages["Tucson"]["4"].fStop || 'n/a';
