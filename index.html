@@ -2026,10 +2026,10 @@
                 flex-direction: column;
                 justify-content: space-evenly;
                 align-items: center;
-                height: 230px;
+                height: 240px;
                 max-height: 230px;
-                width: 210px;
-                max-width: 210px;
+                width: 20dvw;
+                max-width: 20dvw;
                 border-radius: 5px;
                 object-fit: contain;
                 text-decoration: none;
@@ -2039,10 +2039,10 @@
             }
 
             .product-item img {
-                height: 140px;
-                max-height: 140px;
-                width: 140px;
-                max-width: 140px;
+                height: 17.5dvw;
+                max-height: 17.5dvw;
+                width: 17.5dvw;
+                max-width: 17.5dvw;
             }
 
             .product-item-head {
@@ -2064,7 +2064,7 @@
                 bottom: 0;
                 text-decoration: none;
                 gap: 5px;
-                padding: 0 5px;
+                padding: 0 2px;
             }
 
             .product-item-text h5 {
@@ -2091,12 +2091,17 @@
                 gap: 10px;
             }
 
-            .shopAll {
-                align-self: flex-end;
-                margin-left: auto;
+            .featuredSelections {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                min-width: 100%;
+                width: 100%;
                 margin-right: 10px;
                 margin-top: 15px;
-                right: 0;
+            }
+
+            .shopAll {
                 text-decoration: none;
             }
 
@@ -3032,9 +3037,12 @@
                             <div class="product-grid" id="product-grid">
                                 <!-- Dynamic Featured Section -->
                             </div>
-                            <a class="shopAll" href="https://www.redbubble.com/people/photosbymtd/shop?artistUserName=photosbymtd&collections=4496975&iaCode=all-departments&sortOrder=top%20selling">
-                                <button class="widthButton shopAll">Shop All</button>
-                            </a>
+                            <div class="featuredSelections">
+                                <button class="widthButton" id="refreshFeatured">Refresh</button>
+                                <a class="shopAll" href="https://www.redbubble.com/people/photosbymtd/shop?artistUserName=photosbymtd&collections=4496975&iaCode=all-departments&sortOrder=top%20selling">
+                                    <button class="widthButton shopAll">Shop All</button>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -3899,59 +3907,103 @@ requestAnimationFrame(() => {
                 "An Everglade Oasis": {
                     "Premium Oversized Sweatshirt": {itemPrice: "$43.82", src: "IMG_8394.jpeg", href: "https://www.redbubble.com/i/sweatshirt/An-Everglade-Oasis-by-PhotosByMTD/180399040/cdux?asc=u"},
                     "Magnet": {itemPrice: "$5.30", src: "IMG_8395.jpeg", href: "https://www.redbubble.com/i/magnet/An-Everglade-Oasis-by-PhotosByMTD/180399040/9gzh?asc=u"},
-                    "Mouse Pad": {itemPrice: "$11.66", src: "IMG_8397.jpeg", href: "https://www.redbubble.com/i/mouse-pad/An-Everglade-Oasis-by-PhotosByMTD/180399040/2mh5?asc=u"},
-                    "Holographic Sticker": {itemPrice: "$3.17", src: "IMG_8398.jpeg", href: "https://www.redbubble.com/i/holographic-sticker/An-Everglade-Oasis-by-PhotosByMTD/180399040/mtb4?asc=u"},
-                    "Fitted T-Shirt": {itemPrice: "$16.00", src: "IMG_8400.jpeg", href: "https://www.redbubble.com/i/t-shirt/An-Everglade-Oasis-by-PhotosByMTD/180399040/my4n?asc=u"},
-                    "iPhone Snap Case": {itemPrice: "$21.99", src: "IMG_8402.jpeg", href: "https://www.redbubble.com/i/iphone-case/An-Everglade-Oasis-by-PhotosByMTD/180399040/hvg3?asc=u"},
-                    "Clock": {itemPrice: "$26.56", src: "IMG_8403.jpeg", href: "https://www.redbubble.com/i/clock/An-Everglade-Oasis-by-PhotosByMTD/180399040/l4nc?asc=u"},
-                    "Socks": {itemPrice: "$12.01", src: "IMG_8404.jpeg", href: "https://www.redbubble.com/i/socks/An-Everglade-Oasis-by-PhotosByMTD/180399040/sr4g?asc=u"},
-                    "Spiral Notebook": {itemPrice: "$10.75", src: "IMG_8405.jpeg", href: "https://www.redbubble.com/i/notebook/An-Everglade-Oasis-by-PhotosByMTD/180399040/qhru?asc=u"},
+                    "Mouse Pad": {itemPrice: "$11.66", src: "IMG_8396.jpeg", href: "https://www.redbubble.com/i/mouse-pad/An-Everglade-Oasis-by-PhotosByMTD/180399040/2mh5?asc=u"},
+                    "Holographic Sticker": {itemPrice: "$3.17", src: "IMG_8397.jpeg", href: "https://www.redbubble.com/i/holographic-sticker/An-Everglade-Oasis-by-PhotosByMTD/180399040/mtb4?asc=u"},
+                    "Fitted T-Shirt": {itemPrice: "$16.00", src: "IMG_8398.jpeg", href: "https://www.redbubble.com/i/t-shirt/An-Everglade-Oasis-by-PhotosByMTD/180399040/my4n?asc=u"},
+                    "iPhone Snap Case": {itemPrice: "$21.99", src: "IMG_8399.jpeg", href: "https://www.redbubble.com/i/iphone-case/An-Everglade-Oasis-by-PhotosByMTD/180399040/hvg3?asc=u"},
+                    "Clock": {itemPrice: "$26.56", src: "IMG_8400.jpeg", href: "https://www.redbubble.com/i/clock/An-Everglade-Oasis-by-PhotosByMTD/180399040/l4nc?asc=u"},
+                    "Socks": {itemPrice: "$12.01", src: "IMG_8401.jpeg", href: "https://www.redbubble.com/i/socks/An-Everglade-Oasis-by-PhotosByMTD/180399040/sr4g?asc=u"},
+                    "Spiral Notebook": {itemPrice: "$10.75", src: "IMG_8402.jpeg", href: "https://www.redbubble.com/i/notebook/An-Everglade-Oasis-by-PhotosByMTD/180399040/qhru?asc=u"},
                 },
                 "Turtle Dinner": {
-                    "Relaxed T-Shirt": {itemPrice: "$18.38", src: "IMG_8406.jpeg", href: "https://www.redbubble.com/i/t-shirt/Turtle-Dinner-by-PhotosByMTD/180346904/xmcg?asc=u"},
-                    "Bucket Hat": {itemPrice: "$17.85", src: "IMG_8407.jpeg", href: "https://www.redbubble.com/i/bucket-hat/Turtle-Dinner-by-PhotosByMTD/180346904/3vy7?asc=u"},
-                    "iPhone MagSafe Case": {itemPrice: "$32.46", src: "IMG_8408.jpeg", href: "https://www.redbubble.com/i/iphone-case/Turtle-Dinner-by-PhotosByMTD/180346904/c4kx?asc=u"},
-                    "Tank Top": {itemPrice: "$16.00", src: "IMG_8409.jpeg", href: "https://www.redbubble.com/i/tank-top/Turtle-Dinner-by-PhotosByMTD/180346904/5xql?asc=u"},
-                    "Laptop Sleeve": {itemPrice: "$32.26", src: "IMG_8410.jpeg", href: "https://www.redbubble.com/i/laptop-case/An-Everglade-Oasis-by-PhotosByMTD/180346904/uh7r?asc=u"},
-                    "Coffee Mug": {itemPrice: "$12.42", src: "IMG_8413.jpeg", href: "https://www.redbubble.com/i/mug/An-Everglade-Oasis-by-PhotosByMTD/180346904/7yqg?asc=u"},
-                    "Socks": {itemPrice: "$12.01", src: "IMG_8414.jpeg", href: "https://www.redbubble.com/i/socks/An-Everglade-Oasis-by-PhotosByMTD/180346904/sr4q?asc=u"},
+                    "Relaxed T-Shirt": {itemPrice: "$18.38", src: "IMG_8403.jpeg", href: "https://www.redbubble.com/i/t-shirt/Turtle-Dinner-by-PhotosByMTD/180346904/xmcg?asc=u"},
+                    "Bucket Hat": {itemPrice: "$17.85", src: "IMG_8404.jpeg", href: "https://www.redbubble.com/i/bucket-hat/Turtle-Dinner-by-PhotosByMTD/180346904/3vy7?asc=u"},
+                    "iPhone MagSafe Case": {itemPrice: "$32.46", src: "IMG_8405.jpeg", href: "https://www.redbubble.com/i/iphone-case/Turtle-Dinner-by-PhotosByMTD/180346904/c4kx?asc=u"},
+                    "Classic T-Shirt": {itemPrice: "$14.83", src: "IMG_8406.jpeg", href: "https://www.redbubble.com/i/t-shirt/An-Everglade-Oasis-by-PhotosByMTD/180346904/lrcw?asc=u"},
+                    "Tank Top": {itemPrice: "$16.00", src: "IMG_8407.jpeg", href: "https://www.redbubble.com/i/tank-top/Turtle-Dinner-by-PhotosByMTD/180346904/5xql?asc=u"},
+                    "Laptop Sleeve": {itemPrice: "$32.26", src: "IMG_8408.jpeg", href: "https://www.redbubble.com/i/laptop-case/An-Everglade-Oasis-by-PhotosByMTD/180346904/uh7r?asc=u"},
+                    "Coffee Mug": {itemPrice: "$12.42", src: "IMG_8409.jpeg", href: "https://www.redbubble.com/i/mug/An-Everglade-Oasis-by-PhotosByMTD/180346904/7yqg?asc=u"},
+                    "Socks": {itemPrice: "$12.01", src: "IMG_8410.jpeg", href: "https://www.redbubble.com/i/socks/An-Everglade-Oasis-by-PhotosByMTD/180346904/sr4q?asc=u"},
+                },
+                "Park Scenes on the Gulf of Mexico": {
+                    "Magnet": {itemPrice: "$5.30", src: "IMG_.jpeg", href: "https://www.redbubble.com/i/magnet/Park-Scenes-on-the-Gulf-of-Mexico-by-PhotosByMTD/180451265/9gzh?asc=u"},
+                    "Mouse Pad": {itemPrice: "$11.66", src: "IMG_.jpeg", href: "https://www.redbubble.com/i/mouse-pad/Park-Scenes-on-the-Gulf-of-Mexico-by-PhotosByMTD/180451265/2mh5?asc=u"},
+                    "Laptop Sleeve": {itemPrice: "$32.26", src: "IMG_.jpeg", href: "https://www.redbubble.com/i/laptop-case/Park-Scenes-on-the-Gulf-of-Mexico-by-PhotosByMTD/180451265/uh7r?asc=u"},
+                    "Transparent Sticker": {itemPrice: "$2.17", src: "IMG_.jpeg", href: "https://www.redbubble.com/i/sticker/Park-Scenes-on-the-Gulf-of-Mexico-by-PhotosByMTD/180451265/djes?asc=u"},
+                    "Canvas Print": {itemPrice: "$39.29", src: "IMG_.jpeg", href: "https://www.redbubble.com/i/canvas-print/Park-Scenes-on-the-Gulf-of-Mexico-by-PhotosByMTD/180451265/5mul?asc=u"},
+                    "Throw Pillow": {itemPrice: "$15.48", src: "IMG_.jpeg", href: "https://www.redbubble.com/i/throw-pillow/Park-Scenes-on-the-Gulf-of-Mexico-by-PhotosByMTD/180451265/xwxm?asc=u"},
+                    "Tall Mug": {itemPrice: "$12.52", src: "IMG_.jpeg", href: "https://www.redbubble.com/i/mug/Park-Scenes-on-the-Gulf-of-Mexico-by-PhotosByMTD/180451265/ctqx?asc=u"},
+                    "Zipper Pouch": {itemPrice: "$10.38", src: "IMG_.jpeg", href: "https://www.redbubble.com/i/pouch/Park-Scenes-on-the-Gulf-of-Mexico-by-PhotosByMTD/180451265/lwbc?asc=u"},
+                },
+                "Peace in the Everglades": {
+                    "Graphic T-Shirt": {itemPrice: "$22.60", src: "IMG_.jpeg", href: "https://www.redbubble.com/i/t-shirt/Peace-in-the-Everglades-by-PhotosByMTD/180398753/rfjh?asc=u"},
+                    "Racerback Tank Top": {itemPrice: "$15.98", src: "IMG_.jpeg", href: "https://www.redbubble.com/i/tank-top/Peace-in-the-Everglades-by-PhotosByMTD/180398753/wwtp?asc=u"},
+                    "Art Board Print": {itemPrice: "$7.99", src: "IMG_.jpeg", href: "https://www.redbubble.com/i/art-board-print/Peace-in-the-Everglades-by-PhotosByMTD/180398753/xpmg?asc=u"},
+                    "Clock": {itemPrice: "$26.56", src: "IMG_.jpeg", href: "https://www.redbubble.com/i/clock/Peace-in-the-Everglades-by-PhotosByMTD/180398753/l4nc?asc=u"},
+                    "Coasters (Set of 4)": {itemPrice: "$12.82", src: "IMG_.jpeg", href: "https://www.redbubble.com/i/coasters/Peace-in-the-Everglades-by-PhotosByMTD/180398753/43wr?asc=u"},
+                    "Classic Mug": {itemPrice: "$12.52", src: "IMG_.jpeg", href: "https://www.redbubble.com/i/mug/Peace-in-the-Everglades-by-PhotosByMTD/180398753/7yqg?asc=u"},
+                    "Pin": {itemPrice: "$2.60", src: "IMG_.jpeg", href: "https://www.redbubble.com/i/pin/Peace-in-the-Everglades-by-PhotosByMTD/180398753/lw9c?asc=u"},
+                    "Socks": {itemPrice: "$12.01", src: "IMG_.jpeg", href: "https://www.redbubble.com/i/socks/Peace-in-the-Everglades-by-PhotosByMTD/180398753/sr4q?asc=u"},
+                },
+                "Alligator Eyes Only": {
+                    "Mouse Pad": {itemPrice: "$11.66", src: "IMG_.jpeg", href: "https://www.redbubble.com/i/mouse-pad/Alligator-Eyes-Only-by-PhotosByMTD/180348570/2mh5?asc=u"},
+                    "Holographic Sticker": {itemPrice: "$3.17", src: "IMG_.jpeg", href: "https://www.redbubble.com/i/holographic-sticker/Alligator-Eyes-Only-by-PhotosByMTD/180348570/mtb4?asc=u"},
+                    "iPhone Snap Case": {itemPrice: "$21.20", src: "IMG_.jpeg", href: "https://www.redbubble.com/i/iphone-case/Alligator-Eyes-Only-by-PhotosByMTD/180348570/hvg3?asc=u"},
+                    "Samsung Galaxy Case": {itemPrice: "$23.70", src: "IMG_.jpeg", href: "https://www.redbubble.com/i/samsung-case/Alligator-Eyes-Only-by-PhotosByMTD/180348570/drks?asc=u"},
+                    "Framed Print": {itemPrice: "$65.73", src: "IMG_.jpeg", href: "https://www.redbubble.com/i/framed-print/Alligator-Eyes-Only-by-PhotosByMTD/180348570/lmvc?asc=u"},
+                    "Postcard": {itemPrice: "$1.75", src: "IMG_.jpeg", href: "https://www.redbubble.com/i/postcard/Alligator-Eyes-Only-by-PhotosByMTD/180348570/vk5y?asc=u"},
+                    "Coasters (Set of 4)": {itemPrice: "$12.82", src: "IMG_.jpeg", href: "https://www.redbubble.com/i/coaster/Alligator-Eyes-Only-by-PhotosByMTD/180348570/43wr?asc=u"},
+                    "Socks": {itemPrice: "$12.01", src: "IMG_.jpeg", href: "https://www.redbubble.com/i/socks/Alligator-Eyes-Only-by-PhotosByMTD/180348570/sr4q?asc=u"},
                 },
             };
 
             const grid = document.getElementById('product-grid');
+            const refreshButton = document.getElementById('refreshFeatured');
 
-            // FIX 3: Robust alternative picker function to avoid math.random sort bugs
+            // Robust alternative picker function to avoid Math.random sort bugs
             function getRandomElements(array, count) {
-                const shuffled = [...array].sort(() => Math.random() - 0.5);
-                return shuffled.slice(0, count);
+            const shuffled = [...array].sort(() => Math.random() - 0.5);
+            return shuffled.slice(0, count);
             }
 
-            // FIX 2: Used Object.entries to retrieve both the string keys and the value objects
-            const allArtwork = Object.entries(FeaturedObject);
-            const selectedArtwork = getRandomElements(allArtwork, 4);
+            // Wrap the rendering logic in a reusable function
+            function displayFeaturedProducts() {
+                // Clear the grid before rendering new items
+                grid.innerHTML = ''; 
 
-            selectedArtwork.forEach(([artworkName, artworkItems]) => {
-                const allItems = Object.entries(artworkItems);
-                const selectedItems = getRandomElements(allItems, 1);
+                // Used Object.entries to retrieve both the string keys and the value objects
+                const allArtwork = Object.entries(FeaturedObject);
+                const selectedArtwork = getRandomElements(allArtwork, 2);
 
-                selectedItems.forEach(([itemName, itemDetails]) => {
+                selectedArtwork.forEach(([artworkName, artworkItems]) => {
+                    const allItems = Object.entries(artworkItems);
+                    const selectedItems = getRandomElements(allItems, 2);
+
+                    selectedItems.forEach(([itemName, itemDetails]) => {
                     // Clear injection mapping variables safely
                     grid.innerHTML += `
                         <div class="product-item">
-                            <a href="${itemDetails.href}">
-                                <div class="product-item-head">
-                                    <h4>${artworkName}</h4>
-                                </div>
-                                <img src="${itemDetails.src}" alt="${artworkName} ${itemName}">
-                                <div class="product-item-text">
-                                    <h5>${itemName}</h5>
-                                    <p>${itemDetails.itemPrice}</p>
-                                </div>
-                            </a>
+                        <a href="${itemDetails.href}">
+                            <div class="product-item-head">
+                            <h4>${artworkName}</h4>
+                            </div>
+                            <img src="${itemDetails.src}" alt="${artworkName} ${itemName}">
+                            <div class="product-item-text">
+                            <h5>${itemName}</h5>
+                            <p>${itemDetails.itemPrice}</p>
+                            </div>
+                        </a>
                         </div>
                     `;
+                    });
                 });
-            });
+            }
+
+            // 1. Run immediately when the page loads
+            displayFeaturedProducts();
+
+            // 2. Run again whenever the refresh button is clicked
+            refreshButton.addEventListener('click', displayFeaturedProducts);
 
         </script>
         
