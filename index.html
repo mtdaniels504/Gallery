@@ -3368,7 +3368,24 @@
             const potm = document.getElementById('pmImgContainer');
             potm.style.border = '2px solid rgb(0, 0, 255)';
 
+
+            /* Template
+                "1": {name: "", url: "IMG_.JPG", album: "", date: "//2026", time: "", location: "", coordinates: "", alt: "", fileType: "JPG", fileSize: "KB", dimensions: "5184x3456", rating: "/5", camera: "Canon EOS REBEL T2i", lens: "", focalLength: "mm", fStop: "f/", exposureProgram: "Landscape", exposureBias: "0 Step", exposureTime: "1/ sec.", iso: "ISO-100", flash: "No Flash"},
+            */
+
+
             const mgImages = {
+                "Colorado Misc. (1)": {
+                    "2": {name: "A Winter Park Bus Stop", url: "IMG_7213.JPG", album: "Colorado Misc.", date: "02/14/2026", time: "11:33 AM", location: "Winter Park, CO", coordinates: "", alt: "Adventure-Seekers gear up to get ready for a day on the slopes of Winter Park, CO", fileType: "JPG", fileSize: "6,226KB", dimensions: "5184x3456", rating: "3.4/5", camera: "Canon EOS REBEL T2i", lens: "", focalLength: "21mm", fStop: "f/11", exposureProgram: "Landscape", exposureBias: "0 Step", exposureTime: "1/125 sec.", iso: "ISO-100", flash: "No Flash"},
+                    "3": {name: "As Far as the Eye Can See", url: "IMG_7217.JPG", album: "Colorado Misc.", date: "02/14/2026", time: "4:06 PM", location: "Lower Gold Camp Rd, Colorado Springs, CO", coordinates: "", alt: "Overlooking Sunny Colorado Springs from the mountains above", fileType: "JPG", fileSize: "5,581KB", dimensions: "5184x3456", rating: "3.2/5", camera: "Canon EOS REBEL T2i", lens: "", focalLength: "11mm", fStop: "f/11", exposureProgram: "Landscape", exposureBias: "0 Step", exposureTime: "1/125 sec.", iso: "ISO-100", flash: "No Flash"},
+                    "4": {name: "From the Other Side", url: "IMG_7221.JPG", album: "Colorado Misc.", date: "02/15/2026", time: "4:57 PM", location: "Lower Gold Camp Rd, Colorado Springs, CO", coordinates: "", alt: "A truck starts it's journey through a blown out mining tunnel in the Colorado Mountains", fileType: "JPG", fileSize: "6,733KB", dimensions: "5184x3456", rating: "3.4/5", camera: "Canon EOS REBEL T2i", lens: "", focalLength: "55mm", fStop: "f/10", exposureProgram: "Landscape", exposureBias: "0 Step", exposureTime: "1/250 sec.", iso: "ISO-100", flash: "No Flash"},
+                    "5": {name: "To Destinations Unknown", url: "IMG_7225.JPG", album: "Colorado Misc.", date: "02/15/2026", time: "4:57 PM", location: "Lower Gold Camp Rd, Colorado Springs, CO", coordinates: "", alt: "A jeep moves catiously through a makeshift tunnel in the Colorado Mountains", fileType: "JPG", fileSize: "7,871KB", dimensions: "5184x3456", rating: "3.6/5", camera: "Canon EOS REBEL T2i", lens: "", focalLength: "55mm", fStop: "f/", exposureProgram: "Landscape", exposureBias: "0 Step", exposureTime: "1/ sec.", iso: "ISO-100", flash: "No Flash"},
+                    "6": {name: "Seven Falls: Winter Edition", url: "IMG_7228.JPG", album: "Colorado Misc.", date: "02/15/2026", time: "5:08 PM", location: "Colorado Springs, CO", coordinates: "", alt: "A frozen sevel falls still flows as beautiful as ever, Colorado Springs, CO", fileType: "JPG", fileSize: "8,449KB", dimensions: "5184x3456", rating: "/5", camera: "Canon EOS REBEL T2i", lens: "", focalLength: "55mm", fStop: "f/7.1", exposureProgram: "Landscape", exposureBias: "0 Step", exposureTime: "1/125 sec.", iso: "ISO-100", flash: "No Flash"},
+                    "7": {name: "Deer!", url: "IMG_7229.JPG", album: "Colorado Misc.", date: "02/15/2026", time: "5:16 PM", location: "Colorado Springs, CO", coordinates: "", alt: "A deer.", fileType: "JPG", fileSize: "7,341KB", dimensions: "5184x3456", rating: "/5", camera: "Canon EOS REBEL T2i", lens: "", focalLength: "55mm", fStop: "f/9", exposureProgram: "Landscape", exposureBias: "0 Step", exposureTime: "1/200 sec.", iso: "ISO-100", flash: "No Flash"},
+                    "8": {name: "Graffiti Rock", url: "IMG_7234.JPG", album: "Colorado Misc.", date: "02/15/2026", time: "5:25 PM", location: "Colorado Springs, CO", coordinates: "", alt: "A artist ridden rock stands atop the ridgeline of Colorado Springs", fileType: "JPG", fileSize: "10,290KB", dimensions: "5184x3456", rating: "/5", camera: "Canon EOS REBEL T2i", lens: "", focalLength: "55mm", fStop: "f/8", exposureProgram: "Landscape", exposureBias: "0 Step", exposureTime: "1/160 sec.", iso: "ISO-100", flash: "No Flash"},
+                    "9": {name: "Painted in Stone", url: "IMG_7254.JPG", album: "Colorado Misc.", date: "02/15/2026", time: "5:24 PM", location: "Colorado Springs, CO", coordinates: "", alt: "A second look at a graffiti covered rock in Colorado Springs", fileType: "JPG", fileSize: "9,219KB", dimensions: "5184x3456", rating: "/5", camera: "Canon EOS REBEL T2i", lens: "", focalLength: "55mm", fStop: "f/7.1", exposureProgram: "Landscape", exposureBias: "0 Step", exposureTime: "1/125 sec.", iso: "ISO-100", flash: "No Flash"},
+                    "10": {name: "Gotta Catch Em' All", url: "IMG_7255.JPG", album: "Colorado Misc.", date: "02/15/2026", time: "5:36 PM", location: "Colorado Springs, CO", coordinates: "", alt: "One of the many Easter eggs of Graffiti Rock in Colorado Springs", fileType: "JPG", fileSize: "9,323KB", dimensions: "5184x3456", rating: "/5", camera: "Canon EOS REBEL T2i", lens: "", focalLength: "55mm", fStop: "f/5.6", exposureProgram: "Landscape", exposureBias: "0 Step", exposureTime: "1/80 sec.", iso: "ISO-100", flash: "No Flash"},
+                },
                 "Glen Canyon Dam": {
                     "1": {name: "Across The Glen Canyon Dam", url: "IMG_7200.JPG", album: "Glen Canyon Dam", date: "02/06/2026", time: "5:16 PM", location: "Glen Canyon Dam, Page, AZ", coordinates: "36.92390N, 111.47777W", alt: "Looking Across The Glen Canyon Dam from the Glen Canyon Overlook", fileType: "JPG", fileSize: "6,407 KB", dimensions: "5184x3456", rating: "2.1/5", camera: "Canon EOS REBEL T2i", lens: "Tamron 18-270mm", focalLength: "55mm", fStop: "f/11", exposureProgram: "Landscape", exposureBias: "0 Step", exposureTime: "1/400 sec.", iso: "ISO-100", flash: "No Flash"},
                     "2": {name: "The Glen Canyon Dam", url: "IMG_7201.JPG", album: "Glen Canyon Dam", date: "02/06/2026", time: "5:16PM", location: "Glen Canyon Dam, Page, AZ", coordinates: "36.92390N, 111.47777W", alt: "At Look at the Glen Canyon Dam, Page, AZ", fileType: "JPG", fileSize: "5,934 KB", dimensions: "3456x5184", rating: "3.2/5", camera: "Canon EOS REBEL T2i", lens: "Tamron 18-270mm", focalLength: "55mm", fStop: "f/11", exposureProgram: "Landscape", exposureBias: "0 Step", exposureTime: "1/320 sec.", iso: "ISO-100", flash: "No Flash"},
@@ -3837,6 +3854,42 @@
 
         <script id="Featured">
             const FeaturedObject = {
+                "Saguaro Highway": {
+                    "Magnet": {itemPrice: "$7.06", src: "IMG_8930.jpeg", href: "https://redbubble.com/i/magnet/Saguaro-Highway-by-PhotosByMTD/180977972/9gzh?asc=u"},
+                    "Relaxed T-shirt": {itemPrice: "$23.84", src: "IMG_8931.jpeg", href: "https://redbubble.com/i/t-shirt/Saguaro-Highway-by-PhotosByMTD/180977972/xmcg?asc=u"},
+                    "Bucket Hat": {itemPrice: "$23.80", src: "IMG_8932.jpeg", href: "https://redbubble.com/i/bucket-hat/Saguaro-Highway-by-PhotosByMTD/180977972/3vy7?asc=u"},
+                    "Premium T-Shirt": {itemPrice: "$29.57", src: "IMG_8933.jpeg", href: "https://redbubble.com/i/t-shirt/Saguaro-Highway-by-PhotosByMTD/180977972/e22z?asc=u"},
+                    "Sticker": {itemPrice: "$2.64", src: "IMG_8934.jpeg", href: "https://redbubble.com/i/sticker/Saguaro-Highway-by-PhotosByMTD/180977972/7sgk?asc=u"},
+                    "Art Board Print": {itemPrice: "$10.00", src: "IMG_8935.jpeg", href: "https://redbubble.com/i/art-board-print/Saguaro-Highway-by-PhotosByMTD/180977972/xpmg?asc=u"},
+                    "Canvas Print": {itemPrice: "$52.40", src: "IMG_8936.jpeg", href: "https://redbubble.com/i/canvas-print/Saguaro-Highway-by-PhotosByMTD/180977972/5mul?asc=u"},
+                    "Framed Art Print": {itemPrice: "$87.64", src: "IMG_8937.jpeg", href: "https://redbubble.com/i/framed-print/Saguaro-Highway-by-PhotosByMTD/180977972/lmvc?asc=u"},
+                    "Zipper Pouch": {itemPrice: "$12.97", src: "IMG_8938.jpeg", href: "https://redbubble.com/i/pouch/Saguaro-Highway-by-PhotosByMTD/180977972/lwbc?asc=u"},
+                },
+                "Vantage Point: Saguaro": {
+                    "iPhone Soft Case": {itemPrice: "$28.27", src: "IMG_8939.jpeg", href: "https://redbubble.com/i/iphone-case/Vantage-Point-Saguaro-by-PhotosByMTD/181003531/2x65?asc=u"},
+                    "Samsung Soft Case": {itemPrice: "$24.28", src: "IMG_8940.jpeg", href: "https://redbubble.com/i/samsung-case/Vantage-Point-Saguaro-by-PhotosByMTD/181003531/wu9t?asc=u"},
+                    "Framed Art Print": {itemPrice: "$87.64", src: "IMG_8941.jpeg", href: "https://redbubble.com/i/framed-print/Vantage-Point-Saguaro-by-PhotosByMTD/181003531/lmvc?asc=u"},
+                    "Poster": {itemPrice: "$12.19", src: "IMG_8942.jpeg", href: "https://redbubble.com/i/poster/Vantage-Point-Saguaro-by-PhotosByMTD/181003531/flk2?asc=u"},
+                },
+                "King Cactus": {
+                    "Premium Sweatshirt": {itemPrice: "$54.77", src: "IMG_8943.jpeg", href: "https://redbubble.com/i/sweatshirt/King-Cactus-by-PhotosByMTD/181021404/cdux?asc=u"},
+                    "Mouse Pad": {itemPrice: "$19.43", src: "IMG_8944.jpeg", href: "https://redbubble.com/i/mouse-pad/King-Cactus-by-PhotosByMTD/181021404/2mh5?asc=u"},
+                    "Bucket Hat": {itemPrice: "$23.80", src: "IMG_8945.jpeg", href: "https://redbubble.com/i/bucket-hat/King-Cactus-by-PhotosByMTD/181021404/3vy7?asc=u"},
+                    "Baseball Cap": {itemPrice: "$22.25", src: "IMG_8946.jpeg", href: "https://redbubble.com/i/hat/King-Cactus-by-PhotosByMTD/181021404/4sgw?asc=u"},
+                    "Classic T-Shirt": {itemPrice: "$23.19", src: "IMG_8947.jpeg", href: "https://redbubble.com/i/t-shirt/King-Cactus-by-PhotosByMTD/181021404/lrcw?asc=u"},
+                    "Longsleeve T-Shirt": {itemPrice: "$23.81", src: "IMG_8948.jpeg", href: "https://redbubble.com/i/long-sleeve-t-shirt/King-Cactus-by-PhotosByMTD/181021404/lmjc?asc=u"},
+                    "Premium T-Shirt": {itemPrice: "$29.51", src: "IMG_8949.jpeg", href: "https://redbubble.com/i/t-shirt/King-Cactus-by-PhotosByMTD/181021404/e22z?asc=u"},
+                    "A-Line Dress": {itemPrice: "$49.15", src: "IMG_8950.jpeg", href: "https://redbubble.com/i/dress/King-Cactus-by-PhotosByMTD/181021404/3yb7?asc=u"},
+                    "iPhone Snap Case": {itemPrice: "$26.86", src: "IMG_8951.jpeg", href: "https://redbubble.com/i/iphone-case/King-Cactus-by-PhotosByMTD/181021404/hvg3?asc=u"},
+                    "Canvas Print": {itemPrice: "$52.40", src: "IMG_8952.jpeg", href: "https://redbubble.com/i/canvas-print/King-Cactus-by-PhotosByMTD/181021404/5mul?asc=u"},
+                },
+                "Two Cactus": {
+                    "Laptop Sleeve": {itemPrice: "$40.32", src: "IMG_8953.jpeg", href: "https://redbubble.com/i/laptop-case/Two-Cactus-by-PhotosByMTD/181025371/uh7r?asc=u"},
+                    "Art Board Print": {itemPrice: "$10.00", src: "IMG_8954.jpeg", href: "https://redbubble.com/i/art-board-print/Two-Cactus-by-PhotosByMTD/181025371/xpmg?asc=u"},
+                    "Canvas Print": {itemPrice: "$52.40", src: "IMG_8955.jpeg", href: "https://redbubble.com/i/canvas-print/Two-Cactus-by-PhotosByMTD/181025371/5mul?asc=u"},
+                    "Clock": {itemPrice: "$33.20", src: "IMG_8956.jpeg", href: "https://redbubble.com/i/clock/Two-Cactus-by-PhotosByMTD/181025371/l4nc?asc=u"},
+                    "Coasters (Set of 4)": {itemPrice: "$16.02", src: "IMG_8957.jpeg", href: "https://redbubble.com/i/coasters/Two-Cactus-by-PhotosByMTD/181025371/43wr?asc=u"},
+                },
                 "Dusk in New Orleans": {
                     "Premium Oversized Sweatshirt": {itemPrice: "$54.77", src: "IMG_8295.jpeg", href: "https://www.redbubble.com/i/sweatshirt/Dusk-in-New-Orleans-by-PhotosByMTD/180682195/cdux?asc=u"},
                     "Mouse Pad": {itemPrice: "$19.43", src: "IMG_8296.jpeg", href: "https://www.redbubble.com/i/mouse-pad/Dusk-in-New-Orleans-by-PhotosByMTD/180682195/2mh5?asc=u"},
@@ -4058,6 +4111,29 @@
                     "iPhone Soft Case": {itemPrice: "$29.34", src: "IMG_8740.jpeg", href: "https://www.redbubble.com/i/iphone-case/The-Dark-Cross-by-PhotosByMTD/180124202/2x65?asc=u"},
                     "Framed Art Print": {itemPrice: "$90.95", src: "IMG_8741.jpeg", href: "https://www.redbubble.com/i/framed-print/The-Dark-Cross-by-PhotosByMTD/180124202/lmvc?asc=u"},
                     "Spiral Notebook": {itemPrice: "$13.95", src: "IMG_8742.jpeg", href: "https://www.redbubble.com/i/notebook/The-Dark-Cross-by-PhotosByMTD/180124202/qhru?asc=u"},
+                },
+                "Heart of Stone": {
+                    "Relaxed T-Shirt": {itemPrice: "$22.97", src: "IMG_8774.jpeg", href: "https://www.redbubble.com/i/t-shirt/Heart-of-Stone-by-PhotosByMTD/180123911/xmcg?asc=u"},
+                    "Graphic T-Shirt": {itemPrice: "$21.04", src: "IMG_8775.jpeg", href: "https://www.redbubble.com/i/t-shirt/Heart-of-Stone-by-PhotosByMTD/180123911/rfjh?asc=u"},
+                    "Classic T-Shirt": {itemPrice: "$21.19", src: "IMG_8776.jpeg", href: "https://www.redbubble.com/i/t-shirt/Heart-of-Stone-by-PhotosByMTD/180123911/lrcw?asc=u"},
+                    "Racerback Tank Top": {itemPrice: "$23.98", src: "IMG_8777.jpeg", href: "https://www.redbubble.com/i/tank-top/Heart-of-Stone-by-PhotosByMTD/180123911/wwtp?asc=u"},
+                    "Essential T-Shirt": {itemPrice: "$22.25", src: "IMG_8778.jpeg", href: "https://www.redbubble.com/i/t-shirt/Heart-of-Stone-by-PhotosByMTD/180123911/z5wf?asc=u"},
+                    "Fitted T-Shirt": {itemPrice: "$21.33", src: "IMG_8779.jpeg", href: "https://www.redbubble.com/i/t-shirt/Heart-of-Stone-by-PhotosByMTD/180123911/my4n?asc=u"},
+                    "Relaxed-Fit T-Shirt": {itemPrice: "$", src: "IMG_8780.jpeg", href: "https://www.redbubble.com/i/t-shirt/Heart-of-Stone-by-PhotosByMTD/180123911/xcmg?asc=u"},
+                },
+                "Calf Pose": {
+                    "Mouse Pad": {itemPrice: "$20.16", src: "IMG_8781.jpeg", href: "https://www.redbubble.com/i/mouse-pad/Calf-Pose-by-PhotosByMTD/180123646/2mh5?asc=u"},
+                    "Dad Hat": {itemPrice: "$23.09", src: "IMG_8782.jpeg", href: "https://www.redbubble.com/i/hat/Calf-Pose-by-PhotosByMTD/180123646/fce2?asc=u"},
+                    "Boxy T-Shirt": {itemPrice: "$29.34", src: "IMG_8783.jpeg", href: "https://www.redbubble.com/i/t-shirt/Calf-Pose-by-PhotosByMTD/180123646/xtkm?asc=u"},
+                    "Baseball Cap": {itemPrice: "$23.09", src: "IMG_8784.jpeg", href: "https://www.redbubble.com/i/hat/Calf-Pose-by-PhotosByMTD/180123646/4sgw?asc=u"},
+                    "Relaxed-Fit T-Shirt": {itemPrice: "$24.53", src: "IMG_8785.jpeg", href: "https://www.redbubble.com/i/t-shirt/Calf-Pose-by-PhotosByMTD/180123646/xcmg?asc=u"},
+                    "Zipped Hoodie": {itemPrice: "$39.41", src: "IMG_8786.jpeg", href: "https://www.redbubble.com/i/hoodie/Calf-Pose-by-PhotosByMTD/180123646/9khb?asc=u"},
+                    "Laptop Sleeve": {itemPrice: "$41.84", src: "IMG_8787.jpeg", href: "https://www.redbubble.com/i/laptop-case/Calf-Pose-by-PhotosByMTD/180123646/uh7r?asc=u"},
+                    "iPhone Snap Case": {itemPrice: "$27.87", src: "IMG_8788.jpeg", href: "https://www.redbubble.com/i/iphone-case/Calf-Pose-by-PhotosByMTD/180123646/hvg3?asc=u"},
+                    "Samsung Soft Case": {itemPrice: "$25.20", src: "IMG_8789.jpeg", href: "https://www.redbubble.com/i/samsung-case/Calf-Pose-by-PhotosByMTD/180123646/wu9t?asc=u"},
+                    "Art Board Print": {itemPrice: "$10.37", src: "IMG_8790.jpeg", href: "https://www.redbubble.com/i/art-board-print/Calf-Pose-by-PhotosByMTD/180123646/xpmg?asc=u"},
+                    "Coasters (Set of 4)": {itemPrice: "$16.62", src: "IMG_8791.jpeg", href: "https://www.redbubble.com/i/coasters/Calf-Pose-by-PhotosByMTD/180123646/43wr?asc=u"},
+                    "Backpack": {itemPrice: "$45.04", src: "IMG_8792.jpeg", href: "https://www.redbubble.com/i/backpack/Calf-Pose-by-PhotosByMTD/180123646/e55z?asc=u"},
                 },
 
             };
